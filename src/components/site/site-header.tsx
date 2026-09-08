@@ -1,12 +1,12 @@
-import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "../ui/navigation-menu";
+import { getTranslations } from "next-intl/server";
+import { ReactNode } from "react";
 import { BSMark } from "../bs-mark";
+import { Link } from "@/i18n/navigation";
 import { Separator } from "../ui/separator";
 import { ThemeSwitcher } from "../theme-switcher";
-import { ReactNode } from "react";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
-import { Link } from "@/i18n/navigation";
-import { getTranslations } from "next-intl/server";
 import { LanguagePicker } from "../language-picker";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
+import { NavigationMenu, NavigationMenuLink, NavigationMenuList, NavigationMenuItem} from "../ui/navigation-menu";
 
 
 export default async function SiteHeader(){

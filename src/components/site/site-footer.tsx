@@ -1,15 +1,14 @@
 "use client"
 
-import Link from "next/link";
-import { Separator } from "../ui/separator";
 import { useState } from "react";
-import { BSMark } from "../bs-mark";
-import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
-import { LINKS, SITE_URL } from "../../lib/site-config";
 import { useTranslations } from "next-intl";
+import { BSMark } from "../bs-mark";
+import { Link } from "@/i18n/navigation";
+import { Separator } from "../ui/separator";
+import { LINKS, SITE_URL } from "@/lib/site-config";
+import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
-
 
 export function SiteFooter() {
   const [date] = useState(new Date().toLocaleDateString())

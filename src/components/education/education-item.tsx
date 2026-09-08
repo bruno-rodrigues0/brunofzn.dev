@@ -1,14 +1,14 @@
 "use client"
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
-import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
-import { GraduationCapIcon, Infinity } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
-import { Separator } from "../ui/separator"
-import { cn } from "../../lib/utils"
-import { Education } from "@/types"
-import { Badge } from "../ui/badge"
 import { useTranslations } from "next-intl"
+import { useEffect, useRef, useState } from "react"
+import { cn } from "@/lib/utils"
+import { Badge } from "../ui/badge"
+import { Education } from "@/types"
+import { Separator } from "../ui/separator"
+import { GraduationCapIcon, Infinity } from "lucide-react"
+import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 
 export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
   const [open, setOpen] = useState<boolean>(defaultOpen)

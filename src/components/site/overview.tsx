@@ -1,8 +1,8 @@
 "use client"
 
-import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ReactNode, useEffect, useState } from "react";
+import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "lucide-react";
 
 const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}
 

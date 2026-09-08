@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { EducationItem } from "./education-item";
-import { EDUCATION } from "../../constants";
+import { EDUCATION } from "@/constants";
 import { getTranslations } from "next-intl/server";
 
 

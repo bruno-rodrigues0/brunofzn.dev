@@ -1,12 +1,12 @@
 "use client"
 
+import { useState } from "react";
+import { useTranslations } from "next-intl";
+import { Button } from "../ui/button";
 import { PROJECTS } from "@/constants";
 import { Separator } from "../ui/separator";
 import ProjectCollapsible from "./projectCollapsible";
-import { useState } from "react";
-import { Button } from "../ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useTranslations } from "next-intl";
 
 export default function Projects() {
   const [showMore, setShowMore] = useState<boolean>(false)

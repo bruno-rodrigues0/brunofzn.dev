@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation"
 import { ReactNode } from "react";
+import { LINKS } from "@/lib/site-config";
 import { GithubIcon, LinkedInIcon, WhatsappIcon } from "../icons";
-import { LINKS } from "../../lib/site-config";
 
 
 export default function SocialLinks(){

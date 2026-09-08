@@ -1,11 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Separator } from "../ui/separator"
-import { Button } from "../ui/button"
-import { ChevronDown, ChevronUp } from "lucide-react"
 import { useTranslations } from "next-intl"
-
+import { Button } from "../ui/button"
+import { Separator } from "../ui/separator"
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 export default function AboutMe(){
   const t = useTranslations('about')

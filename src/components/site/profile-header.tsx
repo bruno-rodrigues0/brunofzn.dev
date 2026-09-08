@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { SpotlightLogo } from "../spotlight-logo";
 import Me from "@public/me.webp"
 import { Verified } from "lucide-react";
-import { Separator } from "../ui/separator";
 import { TextFlip } from "../text-flip";
+import { Separator } from "../ui/separator";
+import { SpotlightLogo } from "../spotlight-logo";
 import { getTranslations } from "next-intl/server";
 
 export default async function ProfileHeader() {

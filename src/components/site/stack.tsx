@@ -1,10 +1,10 @@
+import { cn } from "@/lib/utils";
+import { getTranslations } from "next-intl/server";
 import React from "react";
 import { Badge } from "../ui/badge";
+import { Link } from "@/i18n/navigation";
 import { Separator } from "../ui/separator";
 import { BACKEND, FRONTEND, LANGUAGES, OTHERS, TOOLS } from "@/constants";
-import Link from "next/link";
-import { cn } from "../../lib/utils";
-import { getTranslations } from "next-intl/server";
 
   
 type StackItemProps = {

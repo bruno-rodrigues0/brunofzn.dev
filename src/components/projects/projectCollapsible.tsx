@@ -1,14 +1,14 @@
 "use client"
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
-import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
-import { Infinity, Link as LinkIcon } from "lucide-react"
-import { Separator } from "../ui/separator"
+import { useTranslations } from "next-intl"
 import { useEffect, useRef, useState } from "react"
 import { Project } from "@/types"
 import { Badge } from "../ui/badge"
-import { useTranslations } from "next-intl"
+import { Separator } from "../ui/separator"
+import { Infinity, Link as LinkIcon } from "lucide-react"
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
+import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
 
 export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
   const [open, setOpen] = useState(defaultOpen)
