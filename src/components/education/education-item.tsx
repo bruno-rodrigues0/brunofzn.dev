@@ -8,11 +8,14 @@ import { Separator } from "../ui/separator"
 import { cn } from "../../lib/utils"
 import { Education } from "@/types"
 import { Badge } from "../ui/badge"
+import { useTranslations } from "next-intl"
 
 export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
   const [open, setOpen] = useState<boolean>(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
   const {start, end} = item.period
+  const t = useTranslations('education')
+  const bullets = t.raw(`${item.key}.bullets`) as (string | {text:string, items: string[]})[]
 
   const handleOpenChange = () => {
     setOpen(prev => !prev)
@@ -36,7 +39,7 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
         <span className="size-full -translate-y-2.25 rounded-bl-sm border-b border-l" />
       </div>
 
-      <Collapsible defaultOpen={defaultOpen} open={open} disabled={!item.description} onOpenChange={handleOpenChange}>
+      <Collapsible defaultOpen={defaultOpen} open={open} onOpenChange={handleOpenChange}>
         <CollapsibleTrigger
           render={<div />}
           nativeButton={false}
@@ -61,7 +64,7 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
 
           <dl className="flex flex-wrap items-center gap-x-2 pl-9 text-sm text-muted-foreground">
             <div>
-              <dt className="sr-only">Study period</dt>
+              <dt className="sr-only">{t('srPeriod')}</dt>
               <dd className="flex items-center gap-0.5 tabular-nums">
                 <p className="flex items-center gap-1">
                   {start} - {end ? end : <Infinity width={18}/>}
@@ -78,8 +81,8 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
                 />
 
                 <div>
-                  <dt className="sr-only">Degree</dt>
-                  <dd>{item.degree}</dd>
+                  <dt className="sr-only">{t('srDegree')}</dt>
+                  <dd>{t(`${item.key}.degree`)}</dd>
                 </div>
               </>
             )}
@@ -93,8 +96,8 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
                 />
 
                 <div>
-                  <dt className="sr-only">Field of study</dt>
-                  <dd>{item.fieldOfStudy}</dd>
+                  <dt className="sr-only">{t('srField')}</dt>
+                  <dd>{t(`${item.key}.field`)}</dd>
                 </div>
               </>
             )}
@@ -102,11 +105,28 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
         </CollapsibleTrigger>
 
         <CollapsibleContent className="overflow-hidden">
-          {item.description && (
-            <div className="pt-3 pb-1 pl-9 text-sm">
-              {item.description}
-            </div>
-          )}
+          <div className="pt-3 pb-1 pl-9 text-sm">
+            <ul className="list-disc marker:text-ring list-inside">
+              {bullets.map((bullet, i) => {
+                if (typeof bullet == 'string'){
+                  return (
+                  <li key={i}>{bullet}</li>
+                  )
+                } else {
+                  return (
+                    <div key={i}>
+                      <li>{bullet.text}</li>
+                      <ul className="list-disc list-inside marker:text-secondary pl-6">
+                        {bullet.items.map((bulletItem, i) => (
+                          <li key={i}>{bulletItem}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                }
+              })}
+            </ul>
+          </div>
         </CollapsibleContent>
 
         <div className="flex flex-wrap gap-1.5 pt-3 pl-9">

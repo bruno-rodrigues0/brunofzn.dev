@@ -29,6 +29,5 @@ export type Education = {
     start: string,
     end: string | null,
   },
-  description: string | ReactNode,
   labels ?: string[],
 }
