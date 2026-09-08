@@ -12,11 +12,13 @@
     "credits": "Credits",
     "theme": "Theme"
   },
-  "tagline": [
-    "Computer Science Undergraduate.",
-    "Creating with code.",
-    "Open source contributor."
-  ],
+  "tagLine": {
+    "lines": [
+      "Computer Science Student.",
+      "Creating with code.",
+      "Open Source contributor."
+    ]
+  },
   "overview": {
     "job": "Job",
     "jobValue": "Computer Scientist: CIn - UFPE",
@@ -26,8 +28,6 @@
     "emailValue": "brunorodriguesmtv0@gmail.com",
     "phone": "Phone number",
     "phoneValue": "+55 38 99737 5691",
-    "site": "Site",
-    "siteValue": "brunofzn.dev",
     "time": "Time",
     "gmt": "(GMT-03)",
     "pronouns": "Pronouns",
