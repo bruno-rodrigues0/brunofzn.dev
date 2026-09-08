@@ -5,16 +5,11 @@ import { ThemeSwitcher } from "../theme-switcher";
 import { ReactNode } from "react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 import { Link } from "@/i18n/navigation";
-import { getLocale, getTranslations } from "next-intl/server";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "../ui/dropdown-menu";
-import { Button } from "../ui/button";
-import { routing } from "../../i18n/routing";
-import { Languages } from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import { LanguagePicker } from "../language-picker";
 
-const localeList = routing.locales
 
 export default async function SiteHeader(){
-  const locale = await getLocale()
   const t = await getTranslations("navigation")
 
   return (
@@ -40,27 +35,7 @@ export default async function SiteHeader(){
 
             <Separator orientation="vertical" className="h-[70%] mt-1 max-sm:hidden"/>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className="w-fit" nativeButton={false} render={<div></div>}>
-                  <Button variant="outline" className="font-base font-mono text-center text-muted-foreground bg-background! rounded-full">
-                    <Languages />
-                    <span>{locale}</span>
-                  </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="flex w-fit min-w-20">
-                {localeList.map((loc) => {
-                  if (loc !== locale) {
-                    return (
-                      <Link key={loc} href="/" locale={loc} className="w-full">
-                        <Button variant="ghost" className="hover:bg-background w-full justify-start">
-                          <span>{loc}</span>
-                        </Button>
-                      </Link>
-                    )
-                  } else return (<div key={loc}></div>)
-                })}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <LanguagePicker />
 
             <HoverCard>
               <HoverCardTrigger delay={.1}>
