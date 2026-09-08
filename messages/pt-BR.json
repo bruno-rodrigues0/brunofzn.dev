@@ -12,11 +12,13 @@
     "credits": "Créditos",
     "theme": "Tema"
   },
-  "tagline": [
-    "Estudante de Ciência da Computação.",
-    "Criando com código.",
-    "Contribuidor de código aberto."
-  ],
+  "tagLine": {
+    "lines": [
+      "Estudante de Ciência da Computação.",
+      "Criando com código.",
+      "Contribuidor de código aberto."
+    ]
+  },
   "overview": {
     "job": "Cargo",
     "jobValue": "Cientista da Computação: CIn - UFPE",

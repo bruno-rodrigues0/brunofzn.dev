@@ -4,8 +4,11 @@ import Me from "@public/me.webp"
 import { Verified } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { TextFlip } from "../text-flip";
+import { getTranslations } from "next-intl/server";
 
-export default function ProfileHeader() {
+export default async function ProfileHeader() {
+  const t = await getTranslations("tagLine")
+
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
@@ -47,11 +50,10 @@ export default function ProfileHeader() {
 
           <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
             <TextFlip className="text-sidebar-ring">
-              {[
-                <span key={0}>Computer Science Undergraduate.</span>, 
-                <span key={1}>Creating with code.</span>,
-                <span key={2}>Open source contributor.</span>
-              ]}
+              {(t.raw('lines') as string[]).map((line, i) => (
+                <span key={i}>{line}</span>
+              ))
+              }
             </TextFlip>
           </div>
         </div>
