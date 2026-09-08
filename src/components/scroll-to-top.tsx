@@ -6,6 +6,7 @@ import { useMotionValueEvent, useScroll } from "motion/react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 export function ScrollToTop({
   className,
@@ -15,6 +16,8 @@ export function ScrollToTop({
 
   const [visible, setVisible] = useState(false)
   const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down")
+
+  const t = useTranslations('common')
 
   useMotionValueEvent(scrollY, "change", (latestValue) => {
     setVisible(latestValue >= 400)
@@ -38,7 +41,7 @@ export function ScrollToTop({
       )}
       variant="secondary"
       size="icon-sm"
-      aria-label="Scroll to top"
+      aria-label={t('scrollToTop')}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       {...props}
     >

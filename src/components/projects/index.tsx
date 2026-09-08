@@ -11,6 +11,7 @@ import { useTranslations } from "next-intl";
 export default function Projects() {
   const [showMore, setShowMore] = useState<boolean>(false)
   const t = useTranslations("projects")
+  const tc = useTranslations("common")
 
   return (
     <section className="border-x border-line pt-8 p-4" id="projects">
@@ -28,7 +29,7 @@ export default function Projects() {
       {PROJECTS.length > 2 ?
         <div className="flex justify-center pt-4">
           <Button onClick={() => setShowMore(prev => !prev)} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
-            Show {showMore ? "less" : "more"} {showMore ? <ChevronUp /> : <ChevronDown />}
+            {showMore ? tc('showLess') : tc('showMore')} {showMore ? <ChevronUp /> : <ChevronDown />}
           </Button>
         </div> 
         : ""

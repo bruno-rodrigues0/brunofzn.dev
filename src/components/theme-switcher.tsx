@@ -5,6 +5,7 @@ import { useSyncExternalStore } from "react"
 import { motion } from "motion/react"
 import { useTheme } from "next-themes"
 import { MonitorIcon, SunIcon, MoonIcon } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 function ThemeOption({
   icon,
@@ -17,13 +18,14 @@ function ThemeOption({
   isActive?: boolean
   onClick: (value: string) => void
 }) {
+  const t = useTranslations('common')
   return (
     <button
       data-active={isActive}
       className="relative flex size-8 items-center justify-center rounded-full text-muted-foreground transition-[color] hover:text-foreground data-[active=true]:text-foreground [&_svg]:size-4"
       role="radio"
       aria-checked={isActive}
-      aria-label={`Switch to ${value} theme`}
+      aria-label={t('themeAria', {value})}
       onClick={() => onClick(value)}
     >
       {icon}

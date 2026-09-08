@@ -4,12 +4,12 @@ import { useState } from "react"
 import { Separator } from "../ui/separator"
 import { Button } from "../ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
-import { OVERVIEW_CONTENT } from "@/constants"
 import { useTranslations } from "next-intl"
 
 
 export default function AboutMe(){
   const t = useTranslations('about')
+  const tc = useTranslations('common')
   const time = Number(new Date().toLocaleTimeString("pt-BR", {
     hour: 'numeric'
   }))
@@ -50,7 +50,7 @@ export default function AboutMe(){
       <Separator className="absolute left-0" />
       <div className="flex justify-center pt-4">
         <Button onClick={() => setShowMore(prev => !prev)} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
-          Show {showMore ? "less" : "more"} {showMore ? <ChevronUp /> : <ChevronDown />}
+          {showMore ? tc('showLess') : tc('showMore')} {showMore ? <ChevronUp /> : <ChevronDown />}
         </Button>
       </div>
 
