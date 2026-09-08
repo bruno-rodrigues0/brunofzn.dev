@@ -115,10 +115,10 @@ export const generateMetadata = async (): Promise<Metadata> => {
     },
 
     openGraph: {
-      title: SITE_NAME,
-      description: "A pixel-perfect portfolio inspired by chanhdai.com",
+      title: t('title'),
+      description: t('description'),
       url: SITE_URL,
-      siteName: SITE_NAME,
+      siteName: t('siteName'),
       images: [
         {
           url: OPENGRAPH_IMAGE,
