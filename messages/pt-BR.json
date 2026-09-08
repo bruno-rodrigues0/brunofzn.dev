@@ -153,7 +153,8 @@
   "github": {
     "months": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
     "weekdays": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
-    "totalCount": "{{count}} atividades em {{year}}",
+    "activityCount": "{count} contribuições em {date}",
+    "totalCount": "{count} atividades em {year} no ",
     "less": "Menos",
     "more": "Mais"
   },

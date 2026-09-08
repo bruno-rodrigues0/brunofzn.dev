@@ -8,9 +8,10 @@ import { Spinner } from "@/components/ui/spinner"
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import type { Activity } from "@/components/contribution-graph"
+import type { Activity, Labels } from "@/components/contribution-graph"
 import {
   ContributionGraph,
   ContributionGraphBlock,
@@ -19,6 +20,7 @@ import {
   ContributionGraphLegend,
   ContributionGraphTotalCount,
 } from "@/components/contribution-graph"
+import { useTranslations } from "next-intl"
 
 export function GitHubContributions({
   contributions,
@@ -30,14 +32,25 @@ export function GitHubContributions({
   className?: string
 }) {
   const data = use(contributions)
+  const t = useTranslations('github')
+  const labels: Labels= {
+    months: t.raw("months") as string[],
+    weekdays: t.raw('weekdays') as string[],
+    legend: {
+      less: t('less'),
+      more: t('more')
+    }
+  }
 
   return (
+    <TooltipProvider>
     <ContributionGraph
       className={cn("mx-auto py-2", className)}
       data={data}
       blockSize={11}
       blockMargin={3}
       blockRadius={2}
+      labels={labels}
     >
       <ContributionGraphCalendar
         className="no-scrollbar px-2"
@@ -45,15 +58,18 @@ export function GitHubContributions({
       >
         {({ activity, dayIndex, weekIndex }) => (
           <Tooltip>
-            <TooltipTrigger render={<g />}><ContributionGraphBlock
-                                        activity={activity}
-                                        dayIndex={dayIndex}
-                                        weekIndex={weekIndex}
-                                      /></TooltipTrigger>
+            <TooltipTrigger render={<g />}>
+              <ContributionGraphBlock
+                activity={activity}
+                dayIndex={dayIndex}
+                weekIndex={weekIndex}
+              /></TooltipTrigger>
             <TooltipContent className="font-sans">
               <p>
-                {activity.count} contribution{activity.count > 1 ? "s" : null}{" "}
-                on {format(new Date(activity.date), "dd.MM.yyyy")}
+                {t('activityCount', {
+                    count: activity.count,
+                    date: format(new Date(activity.date), "dd.MM.yyyy")
+                })}
               </p>
             </TooltipContent>
           </Tooltip>
@@ -64,7 +80,7 @@ export function GitHubContributions({
         <ContributionGraphTotalCount>
           {({ totalCount, year }) => (
             <div className="text-muted-foreground">
-              {totalCount.toLocaleString("en")} contributions in {year} on{" "}
+              {t('totalCount', {count: totalCount, year})}
               <a
                 className="text-foreground link-underline"
                 href={githubProfileUrl}
@@ -81,6 +97,7 @@ export function GitHubContributions({
         <ContributionGraphLegend />
       </ContributionGraphFooter>
     </ContributionGraph>
+    </TooltipProvider>
   )
 }
 
