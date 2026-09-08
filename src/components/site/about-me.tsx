@@ -5,38 +5,40 @@ import { Separator } from "../ui/separator"
 import { Button } from "../ui/button"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { OVERVIEW_CONTENT } from "@/constants"
+import { useTranslations } from "next-intl"
 
 
 export default function AboutMe(){
+  const t = useTranslations('about')
   const time = Number(new Date().toLocaleTimeString("pt-BR", {
     hour: 'numeric'
   }))
 
   const [showMore, setShowMore] = useState<boolean>(false)
 
-  const getGreating = () => {
+  const getGreeting = () => {
     if (time >= 6 && time < 12) {
-      return "Good morning"
+      return "morning"
     } else if (time >= 12 && time < 18) {
-      return "Good afternoon"
+      return "afternoon"
     } else {
-      return "Good evening"
+      return "evening"
     }
   }
 
-  const [greating] = useState<string | null>(getGreating())
+  const [greeting] = useState<string>(getGreeting())
 
   return (
     <section id="about" className="border-x border-line w-full pt-8 p-4">
       <div>
-        <h2 className="font-handwrite text-3xl font-bold text-balance">{greating}!</h2>
+        <h2 className="font-handwrite text-3xl font-bold text-balance">{t(`greetings.${greeting}`)}!</h2>
       </div>
 
       <Separator className="absolute left-0"/>
 
       <div className="py-4">
         <ul className="list-disc marker:text-zinc-700  marker:text-lg space-y-3 list-inside">
-          {OVERVIEW_CONTENT.map((phrase, index) => {
+          {(t.raw('paragraphs') as string[]).map((phrase, index) => {
             if ((index > 2 && showMore) || index <= 2) {
               return (<li key={index} className="text-sm font-medium">{phrase}</li>)
             }
