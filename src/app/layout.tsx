@@ -4,8 +4,12 @@ import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { AUTHOR, LINKS, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "../lib/site-config";
+import { AUTHOR, LINKS, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { URL } from "url";
+
+type PageProps = {
+  params: Promise<{locale: string}>,
+}
 
 const handwrite = Caveat({
   weight: "400",

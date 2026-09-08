@@ -1,12 +1,12 @@
-import AboutMe from "../../components/site/about-me";
-import Education from "../../components/education";
-import GithubContrib from "../../components/github-contrib";
-import Overview from "../../components/site/overview";
-import ProfileHeader from "../../components/site/profile-header";
-import Projects from "../../components/projects";
-import SocialLinks from "../../components/site/social-links";
-import Stack from "../../components/site/stack";
-import { Separator } from "../../components/ui/separator";
+import AboutMe from "@/components/site/about-me";
+import Education from "@/components/education";
+import GithubContrib from "@/components/github-contrib";
+import Overview from "@/components/site/overview";
+import ProfileHeader from "@/components/site/profile-header";
+import Projects from "@/components/projects";
+import SocialLinks from "@/components/site/social-links";
+import Stack from "@/components/site/stack";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (

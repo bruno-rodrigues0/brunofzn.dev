@@ -1,7 +1,7 @@
-import { NameGradient } from "../../components/site/name-gradient";
-import { ScrollToTop } from "../../components/scroll-to-top";
-import { SiteFooter } from "../../components/site/site-footer";
-import SiteHeader from "../../components/site/site-header";
+import { NameGradient } from "@/components/site/name-gradient";
+import { ScrollToTop } from "@/components/scroll-to-top";
+import { SiteFooter } from "@/components/site/site-footer";
+import SiteHeader from "@/components/site/site-header";
 
 export default function HomeLayout({ children }: LayoutProps<"/">) {
   return (
