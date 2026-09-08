@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ReactNode, useEffect, useState } from "react";
 import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "lucide-react";
 
@@ -8,15 +8,16 @@ const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', h
 
 export default function Overview(){
   const t = useTranslations("overview")
-  const [time, setTime] = useState(new Date().toLocaleTimeString("pt-BR", localeOpts))
+  const locale = useLocale()
+  const [time, setTime] = useState<string | null>(null)
 
   useEffect(() => {
-    const timerId = setInterval(() => {
-      setTime(new Date().toLocaleTimeString("pt-BR", localeOpts));
-    }, 5000);
+    const update = () => setTime(new Date().toLocaleTimeString(locale, localeOpts))
+    update()
 
+    const timerId = setInterval(update, 5000);
     return () => clearInterval(timerId);
-  })
+  }, [locale])
 
   return (
     <section className="border-x border-line pt-12 p-4 grid grid-cols-2 max-sm:grid-cols-1 gap-4">
