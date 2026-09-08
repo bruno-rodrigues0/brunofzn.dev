@@ -82,7 +82,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations({ locale, namespace: "metadata"})
 
   return {
-    title: t("title"),
+    title: t("title") + process.env.ENV ? "Staging" : "",
     description: t("description"),
     creator: AUTHOR,
     authors: {name: AUTHOR, url: SITE_URL},
