@@ -14,19 +14,6 @@ export const PROJECTS: Project[] = [
       start: "05.2026",
       end: "06.2026",
     },
-
-    description: (
-      <>
-        <p>An open source game created with pygame for the final project of &quot;programing introduction&quot; discipline</p>
-        <ul className="list-disc marker:text-ring list-inside">
-          <li>Pygame and game development fundamentals.</li>
-          <li>Rendering optimization with pygame.</li>
-          <li>Object Oriented Programing.</li>
-          <li>Modularization.</li>
-          <li>Git and github.</li>
-        </ul>
-      </>
-    ),
   },
 
   {
@@ -39,15 +26,6 @@ export const PROJECTS: Project[] = [
       start: "08.2026",
       end: null,
     },
-
-    description: (
-      <>
-        <p>A pixel-perfect portifolio inspired by chanhdai.com</p>
-        <ul className="list-disc marker:text-ring list-inside">
-          <li>Hand-made portiolio and my favorite project.</li>
-        </ul>
-      </>
-    ),
   },
 
   {
@@ -60,17 +38,6 @@ export const PROJECTS: Project[] = [
       start: "08.2026",
       end: null,
     },
-
-    description: (
-      <>
-        <p>iPhone 15 Pro presentation webpage built with Next.js and gsap.</p>
-        <ul className="list-disc marker:text-ring list-inside">
-          <li>Animations with gsap.</li>
-          <li>3D animations with tree.js.</li>
-          <li>Modern interfaces with Tailwindcss.</li>
-        </ul>
-      </>
-    ),
   },
 
   {
@@ -83,17 +50,5 @@ export const PROJECTS: Project[] = [
       start: "01.2026",
       end: null,
     },
-
-    description: (
-      <>
-        <p>A Discord clone with chats, servers and channels working.</p>
-        <ul className="list-disc marker:text-ring list-inside">
-          <li>Working with websocket and pub sub partern for messaging.</li>
-          <li>Using swagger for automatic documentation and endpoint testing.</li>
-          <li>Implementing type verifications with zod.</li>
-          <li>A complete REST API built with Fastify.</li>
-        </ul>
-      </>
-    )
   },
 ]

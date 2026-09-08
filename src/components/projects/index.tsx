@@ -6,13 +6,15 @@ import ProjectCollapsible from "./projectCollapsible";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Projects() {
   const [showMore, setShowMore] = useState<boolean>(false)
+  const t = useTranslations("projects")
 
   return (
     <section className="border-x border-line pt-8 p-4" id="projects">
-      <h2 className="text-4xl font-medium text-balance">Projects<span className="text-base text-muted-foreground align-text-top">({PROJECTS.length})</span> </h2>
+      <h2 className="text-4xl font-medium text-balance">{t('title')}<span className="text-base text-muted-foreground align-text-top">({PROJECTS.length})</span> </h2>
       <Separator className="absolute left-0"/>
 
       <ul>

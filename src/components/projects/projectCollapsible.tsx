@@ -8,11 +8,15 @@ import { Separator } from "../ui/separator"
 import { useEffect, useRef, useState } from "react"
 import { Project } from "@/types"
 import { Badge } from "../ui/badge"
+import { useTranslations } from "next-intl"
 
 export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
   const [open, setOpen] = useState(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
   const {start, end} = project.period
+  const t = useTranslations('projects')
+  const intro = t(`${project.key}.intro`)
+  const bullets = t.raw(`${project.key}.bullets`) as string[]
 
   useEffect(() => {
     if (defaultOpen) chevronsRef.current?.startAnimation()
@@ -44,11 +48,11 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
           >
             <dl>
               <div className="w-full flex flex-col justify-start h-auto px-4">
-                <dt className="sr-only">Project Title</dt>
+                <dt className="sr-only">{t('srTitle')}</dt>
                 <dd>
                   <p className="text-start">{project.title}</p>
                 </dd>
-                <dt className="sr-only">Project period</dt>
+                <dt className="sr-only">{t('srPeriod')}</dt>
                 <dd>
                   <p className="flex items-center gap-1 text-sm text-muted-foreground">
                     {start} - {end ? end : <Infinity width={18}/>}
@@ -64,7 +68,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
                   <LinkIcon className="w-5.5 h-5.5 p-1"/>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-fit">
-                  <span>Go to project</span>
+                  <span>{t('goToProject')}</span>
                 </HoverCardContent>
               </HoverCard>
 
@@ -79,7 +83,14 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
             <Separator className="absolute left-0"/>
 
             <div className="pt-4 space-y-4 text-sm">
-              <div>{project.description}</div>
+              <div>
+                <p>{intro}</p>
+                <ul className="list-disc marker:text-ring list-inside">
+                  {bullets.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+              </div>
               <span className="flex gap-2 flex-wrap">
                 {project.labels?.map((label, index) => (
                   <Badge variant="outline" className="bg-primary-foreground" key={index}>{label}</Badge>

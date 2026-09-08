@@ -7,7 +7,6 @@ export type Project = {
     start: string,
     end: string | null
   },
-  description: string | ReactNode,
   labels?: string[],
   url: string,
   logo: string | ReactNode
