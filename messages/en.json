@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "title": "Bruno Silva | Web Developer",
+    "siteName": "Bruno Silva - Web Developer",
+    "description": "Hi, I'm Bruno, an early-career software developer with approximately three years of focused study and hands-on practice in web development, currently working primarily with TypeScript and the modern JavaScript ecosystem."
+  },
+  "navigation": {
+    "logo": "Logo",
+    "about": "About",
+    "contacts": "Contacts",
+    "projects": "Projects",
+    "credits": "Credits",
+    "theme": "Theme"
+  },
+  "tagline": [
+    "Computer Science Undergraduate.",
+    "Creating with code.",
+    "Open source contributor."
+  ],
+  "overview": {
+    "job": "Job",
+    "jobValue": "Computer Scientist: CIn - UFPE",
+    "location": "Location",
+    "locationValue": "Recife - PE, Brazil",
+    "email": "Email",
+    "emailValue": "brunorodriguesmtv0@gmail.com",
+    "phone": "Phone number",
+    "phoneValue": "+55 38 99737 5691",
+    "site": "Site",
+    "siteValue": "brunofzn.dev",
+    "time": "Time",
+    "gmt": "(GMT-03)",
+    "pronouns": "Pronouns",
+    "pronounsValue": "he/him"
+  },
+  "about": {
+    "greetings": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "paragraphs": [
+      "Early-career software developer with approximately three years of focused study and hands-on practice in web development, currently working primarily with TypeScript and the modern JavaScript ecosystem.",
+      "Strong interest in backend development, API design, and system architecture, developed through academic projects and independent practice.",
+      "Has experience designing and implementing RESTful APIs, authentication flows, and database schemas as part of study-driven and personal projects.",
+      "Previously participated in applied technical activities involving unmanned aerial vehicles (UAVs), contributing to software development tasks as well as drone assembly, configuration, and maintenance in a laboratory environment. This background provided practical exposure to problem-solving, debugging, and working with complex systems.",
+      "Comfortable working with TypeScript and JavaScript, with foundational experience in Python, C/C++, and PHP. Actively improving skills through continuous learning and project-based development, with a focus on writing clean, maintainable, and well-structured code."
+    ]
+  },
+  "stack": {
+    "title": "Stack",
+    "areas": {
+      "language": "Language",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "tools": "Tools",
+      "others": "Others"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "goToProject": "Go to project",
+    "srTitle": "Project Title",
+    "srPeriod": "Project period",
+    "ayuwoke": {
+      "intro": "An open source game created with pygame for the final project of the \"programming introduction\" discipline.",
+      "bullets": [
+        "Pygame and game development fundamentals.",
+        "Rendering optimization with pygame.",
+        "Object Oriented Programming.",
+        "Modularization.",
+        "Git and GitHub."
+      ]
+    },
+    "brunofzn": {
+      "intro": "A pixel-perfect portfolio inspired by chanhdai.com.",
+      "bullets": [
+        "Hand-made portfolio and my favorite project."
+      ]
+    },
+    "apple_website": {
+      "intro": "iPhone 15 Pro presentation webpage built with Next.js and gsap.",
+      "bullets": [
+        "Animations with gsap.",
+        "3D animations with three.js.",
+        "Modern interfaces with Tailwind CSS."
+      ]
+    },
+    "concord": {
+      "intro": "A Discord clone with chats, servers and channels working.",
+      "bullets": [
+        "Working with websocket and pub/sub pattern for messaging.",
+        "Using Swagger for automatic documentation and endpoint testing.",
+        "Implementing type verification with zod.",
+        "A complete REST API built with Fastify."
+      ]
+    }
+  },
+  "education": {
+    "title": "Education",
+    "srPeriod": "Study period",
+    "srDegree": "Degree",
+    "srField": "Field of study",
+    "ufpe": {
+      "degree": "Bachelor's degree",
+      "field": "Computer Science",
+      "bullets": [
+        {
+          "text": "Learned about:",
+          "items": [
+            "Fundamentals of computing.",
+            "Data structures and algorithms.",
+            "Object Oriented Programming.",
+            "Digital systems.",
+            "Software engineering."
+          ]
+        }
+      ]
+    },
+    "ifbaiano": {
+      "degree": "High School",
+      "field": "",
+      "bullets": [
+        "Member of the largest drone team in the state of Bahia.",
+        "Two-time winner of a local programming contest.",
+        "Third place in the Santa Catarina drone competition.",
+        "Learned about web development.",
+        "Two written articles.",
+        {
+          "text": "Academic projects with:",
+          "items": ["Django", "PHP"]
+        },
+        "Learned the basics of requirements engineering.",
+        "Learned the basics of databases."
+      ]
+    }
+  },
+  "footer": {
+    "caption": "A pixel-perfect portfolio inspired by chanhdai.com",
+    "createdBy": "CREATED BY",
+    "date": "DATE",
+    "deployedOn": "DEPLOYED ON",
+    "sourceCode": "SOURCE CODE",
+    "inspiredBy": "INSPIRED BY",
+    "github": "Github"
+  },
+  "common": {
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "scrollToTop": "Scroll to top",
+    "themeAria": "Switch to {value} theme"
+  },
+  "github": {
+    "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "totalCount": "{{count}} activities in {{year}}",
+    "less": "Less",
+    "more": "More"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "404 - Not Found"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "title": "Bruno Silva | Desenvolvedor Web",
+    "siteName": "Bruno Silva - Desenvolvedor Web",
+    "description": "Oi, eu sou o Bruno, um desenvolvedor de software em início de carreira com aproximadamente três anos de estudo focado e prática de desenvolvimento web, trabalhando principalmente com TypeScript e o ecossistema JavaScript moderno."
+  },
+  "navigation": {
+    "logo": "Logo",
+    "about": "Sobre",
+    "contacts": "Contatos",
+    "projects": "Projetos",
+    "credits": "Créditos",
+    "theme": "Tema"
+  },
+  "tagline": [
+    "Estudante de Ciência da Computação.",
+    "Criando com código.",
+    "Contribuidor de código aberto."
+  ],
+  "overview": {
+    "job": "Cargo",
+    "jobValue": "Cientista da Computação: CIn - UFPE",
+    "location": "Localização",
+    "locationValue": "Recife - PE, Brasil",
+    "email": "E-mail",
+    "emailValue": "brunorodriguesmtv0@gmail.com",
+    "phone": "Telefone",
+    "phoneValue": "+55 38 99737 5691",
+    "site": "Site",
+    "siteValue": "brunofzn.dev",
+    "time": "Horário",
+    "gmt": "(GMT-03)",
+    "pronouns": "Pronomes",
+    "pronounsValue": "ele/dele"
+  },
+  "about": {
+    "greetings": {
+      "morning": "Bom dia",
+      "afternoon": "Boa tarde",
+      "evening": "Boa noite"
+    },
+    "paragraphs": [
+      "Desenvolvedor de software em início de carreira, com aproximadamente três anos de estudo focado e prática em desenvolvimento web, trabalhando principalmente com TypeScript e o ecossistema JavaScript moderno.",
+      "Forte interesse em desenvolvimento backend, design de APIs e arquitetura de sistemas, desenvolvido por meio de projetos acadêmicos e prática independente.",
+      "Tenho experiência projetando e implementando APIs REST, fluxos de autenticação e schemas de banco de dados como parte de projetos voltados a estudo e projetos pessoais.",
+      "Participei de atividades técnicas aplicadas envolvendo veículos aéreos não tripulados (VANTs), contribuindo em tarefas de desenvolvimento de software, bem como na montagem, configuração e manutenção de drones em ambiente de laboratório. Essa experiência me proporcionou exposição prática à resolução de problemas, debugging e trabalho com sistemas complexos.",
+      "Tenho facilidade com TypeScript e JavaScript, com experiência básica em Python, C/C++ e PHP. Melhorando ativamente minhas habilidades por meio de aprendizado contínuo e desenvolvimento baseado em projetos, com foco em escrever código limpo, de fácil manutenção e bem estruturado."
+    ]
+  },
+  "stack": {
+    "title": "Stack",
+    "areas": {
+      "language": "Linguagens",
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "tools": "Ferramentas",
+      "others": "Outros"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "goToProject": "Ir para o projeto",
+    "srTitle": "Título do projeto",
+    "srPeriod": "Período do projeto",
+    "ayuwoke": {
+      "intro": "Um jogo open source criado com pygame para o projeto final da disciplina de Introdução à Programação.",
+      "bullets": [
+        "Fundamentos de pygame e desenvolvimento de jogos.",
+        "Otimização de renderização com pygame.",
+        "Programação orientada a objetos.",
+        "Modularização.",
+        "Git e GitHub."
+      ]
+    },
+    "brunofzn": {
+      "intro": "Um portfólio pixel-perfect inspirado em chanhdai.com.",
+      "bullets": [
+        "Portfólio feito à mão e meu projeto favorito."
+      ]
+    },
+    "apple_website": {
+      "intro": "Página de apresentação do iPhone 15 Pro construída com Next.js e gsap.",
+      "bullets": [
+        "Animações com gsap.",
+        "Animações 3D com three.js.",
+        "Interfaces modernas com Tailwind CSS."
+      ]
+    },
+    "concord": {
+      "intro": "Um clone do Discord com chats, servidores e canais funcionando.",
+      "bullets": [
+        "Trabalho com websocket e padrão pub/sub para mensagens.",
+        "Uso de Swagger para documentação automática e testes de endpoints.",
+        "Implementação de verificação de tipos com zod.",
+        "Uma API REST completa construída com Fastify."
+      ]
+    }
+  },
+  "education": {
+    "title": "Educação",
+    "srPeriod": "Período de estudo",
+    "srDegree": "Grau",
+    "srField": "Área de estudo",
+    "ufpe": {
+      "degree": "Bacharelado",
+      "field": "Ciência da Computação",
+      "bullets": [
+        {
+          "text": "Aprendi sobre:",
+          "items": [
+            "Fundamentos da computação.",
+            "Estrutura de dados e algoritmos.",
+            "Programação orientada a objetos.",
+            "Sistemas digitais.",
+            "Engenharia de software."
+          ]
+        }
+      ]
+    },
+    "ifbaiano": {
+      "degree": "Ensino Médio",
+      "field": "",
+      "bullets": [
+        "Membro da maior equipe de drones do estado da Bahia.",
+        "Duas vezes vencedor de uma competição de programação local.",
+        "Terceiro lugar na competição de drones de Santa Catarina.",
+        "Aprendi sobre desenvolvimento web.",
+        "Dois artigos escritos.",
+        {
+          "text": "Projetos acadêmicos com:",
+          "items": ["Django", "PHP"]
+        },
+        "Aprendi o básico de engenharia de requisitos.",
+        "Aprendi o básico de banco de dados."
+      ]
+    }
+  },
+  "footer": {
+    "caption": "Um portfólio pixel-perfect inspirado em chanhdai.com",
+    "createdBy": "CRIADO POR",
+    "date": "DATA",
+    "deployedOn": "IMPLANTADO EM",
+    "sourceCode": "CÓDIGO-FONTE",
+    "inspiredBy": "INSPIRADO POR",
+    "github": "Github"
+  },
+  "common": {
+    "showMore": "Mostrar mais",
+    "showLess": "Mostrar menos",
+    "scrollToTop": "Voltar ao topo",
+    "themeAria": "Mudar para o tema {value}"
+  },
+  "github": {
+    "months": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+    "weekdays": ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    "totalCount": "{{count}} atividades em {{year}}",
+    "less": "Menos",
+    "more": "Mais"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "404 - Não encontrado"
+  }
+}
