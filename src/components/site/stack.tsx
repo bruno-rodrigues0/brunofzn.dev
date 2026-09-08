@@ -4,29 +4,8 @@ import { Separator } from "../ui/separator";
 import { BACKEND, FRONTEND, LANGUAGES, OTHERS, TOOLS } from "@/constants";
 import Link from "next/link";
 import { cn } from "../../lib/utils";
+import { getTranslations } from "next-intl/server";
 
-const AREAS = [
-  {
-    key: "Language",
-    value: LANGUAGES
-  },
-  {
-    key: "Backend",
-    value: BACKEND
-  },
-  {
-    key: "Frontend",
-    value: FRONTEND
-  },
-  {
-    key: "Tools",
-    value: TOOLS
-  },
-  {
-    key: "Others",
-    value: OTHERS
-  },
-]
   
 type StackItemProps = {
   num: string,
@@ -36,10 +15,34 @@ type StackItemProps = {
   props?: React.ComponentProps<"li">
 }
 
-export default function Stack() {
+export default async function Stack() {
+  const t = await getTranslations('stack')
+  const AREAS = [
+    {
+      key: t("areas.language"),
+      value: LANGUAGES
+    },
+    {
+      key: t("areas.backend"),
+      value: BACKEND
+    },
+    {
+      key: t("areas.frontend"),
+      value: FRONTEND
+    },
+    {
+      key: t("areas.tools"),
+      value: TOOLS
+    },
+    {
+      key: t("areas.others"),
+      value: OTHERS
+    },
+  ]
+
   return(
     <section className="border-x border-line pt-8 p-4" id="stack">
-      <h2 className="text-4xl font-sans font-medium text-balance">Stack</h2>
+      <h2 className="text-4xl font-sans font-medium text-balance">{t("title")}</h2>
       <Separator className="absolute left-0"/>
 
       <div className="pt-2">
