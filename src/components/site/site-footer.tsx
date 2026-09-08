@@ -6,36 +6,38 @@ import { useState } from "react";
 import { BSMark } from "../bs-mark";
 import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
 import { LINKS, SITE_URL } from "../../lib/site-config";
+import { useTranslations } from "next-intl";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 
 
 export function SiteFooter() {
   const [date] = useState(new Date().toLocaleDateString())
+  const t = useTranslations('footer')
 
   return (
     <>
       <footer className="border-x border-line pt-8 max-w-180 mx-auto text-sm" id="credits">
         <div className="flex justify-between px-4 py-2 flex-wrap items-center">
           <p><Link href={SITE_URL} className="underline text-primary">brunofzn.vercel.app</Link></p>
-          <p className="text-ring text-xs"> A pixel-perfect portifolio inspired by chanhdai.com</p>
+          <p className="text-ring text-xs">{t('caption')}</p>
         </div>
 
         <Separator className="absolute left-0" />
 
         <div className="flex max-sm:flex-col">
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
-            <span className="text-xs text-ring font-mono ">CREATED BY</span>
+            <span className="text-xs text-ring font-mono ">{t('createdBy')}</span>
             <p><Link href={LINKS.githubProfile} className="underline" target="_blank">@bruno-rodrigues0</Link></p>
           </div>
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
-            <span className="text-xs text-ring font-mono ">DATE</span>
+            <span className="text-xs text-ring font-mono ">{t('date')}</span>
             <p>{date}</p>
           </div>
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-r border-muted">
-            <span className="text-xs text-ring font-mono ">DEPLOYED ON</span>
+            <span className="text-xs text-ring font-mono ">{t('deployedOn')}</span>
             <Link href="https://vercel.com" target="_blank" aria-label="Vercel">
               <p>
                 <VercelIcon className="size-4"/>
@@ -44,14 +46,14 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col flex-1 p-4 gap-2 justify-center border-b border-muted">
-            <span className="text-xs text-ring font-mono ">SOURCE CODE</span>
+            <span className="text-xs text-ring font-mono ">{t('sourceCode')}</span>
             <p><Link href={LINKS.sourceCode} className="underline" target="_blank">Github</Link> </p>
           </div>
         </div>
 
         <div className="flex flex-col">
           <div className="flex flex-1 p-4 pb-0 gap-2  border-muted">
-            <span className="text-xs text-ring font-mono ">INSPIRED BY</span>
+            <span className="text-xs text-ring font-mono ">{t('inspiredBy')}</span>
           </div>
 
           <div className="flex flex-wrap">

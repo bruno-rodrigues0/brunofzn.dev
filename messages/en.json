@@ -141,8 +141,7 @@
     "date": "DATE",
     "deployedOn": "DEPLOYED ON",
     "sourceCode": "SOURCE CODE",
-    "inspiredBy": "INSPIRED BY",
-    "github": "Github"
+    "inspiredBy": "INSPIRED BY"
   },
   "common": {
     "showMore": "Show more",

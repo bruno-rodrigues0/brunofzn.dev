@@ -141,8 +141,7 @@
     "date": "DATA",
     "deployedOn": "IMPLANTADO EM",
     "sourceCode": "CÓDIGO-FONTE",
-    "inspiredBy": "INSPIRADO POR",
-    "github": "Github"
+    "inspiredBy": "INSPIRADO POR"
   },
   "common": {
     "showMore": "Mostrar mais",
