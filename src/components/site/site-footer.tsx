@@ -1,17 +1,19 @@
 "use client"
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { BSMark } from "../bs-mark";
 import { Link } from "@/i18n/navigation";
 import { Separator } from "../ui/separator";
 import { LINKS, SITE_URL } from "@/lib/site-config";
 import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
+import { format } from "date-fns";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 
 export function SiteFooter() {
-  const [date] = useState(new Date().toLocaleDateString())
+  const locale = useLocale()
+  const [date] = useState(format(new Date().toLocaleDateString(), locale === "pt-BR" ?  'dd.MM.yyyy' : 'MM.dd.yyyy',))
   const t = useTranslations('footer')
 
   return (
