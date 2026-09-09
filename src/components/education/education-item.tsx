@@ -104,7 +104,7 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
           </dl>
         </CollapsibleTrigger>
 
-        <CollapsibleContent className="overflow-hidden">
+        <CollapsibleContent className="overflow-hidden h-(--collapsible-panel-height) data-[starting-style]:h-0 data-[ending-style]:h-0 transition-[height] duration-300 ease-in-out">
           <div className="pt-3 pb-1 pl-9 text-sm">
             <ul className="list-disc marker:text-ring list-inside">
               {bullets.map((bullet, i) => {

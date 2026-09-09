@@ -78,7 +78,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
             </div>
         </div>
 
-        <CollapsibleContent>
+        <CollapsibleContent className="overflow-hidden h-(--collapsible-panel-height) data-[starting-style]:h-0 data-[ending-style]:h-0 transition-[height] duration-300 ease-in-out">
           <div className="py-2">
             <Separator className="absolute left-0"/>
 
