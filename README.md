@@ -70,4 +70,4 @@ bun run lint
 
 ## License
 
-Private project. All rights reserved.
+MIT License.
