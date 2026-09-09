@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# brunofzn.dev
+
+> A personal portfolio inspired by [chanhdai.com](https://chanhdai.com), built with Next.js and Tailwind CSS.
+
+**Live:** [brunofzn.dev](https://brunofzn.dev)
+
+## Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com) + [shadcn/ui](https://ui.shadcn.com)
+- **Animations:** [Motion](https://motion.dev) (Framer Motion)
+- **i18n:** [next-intl](https://next-intl.dev) (English / Brazilian Portuguese)
+- **Theme:** [next-themes](https://github.com/pacocoursey/next-themes) (System / Light / Dark)
+- **Package Manager:** [Bun](https://bun.sh)
+- **Analytics:** Vercel Analytics + Speed Insights + OpenPanel
+- **Deploy:** [Vercel](https://vercel.com)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- [Bun](https://bun.sh) >= 1.3.5
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+bun run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Build
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+bun run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+bun run start
+```
 
-## Deploy on Vercel
+### Lint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+bun run lint
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features
+
+- **Profile header** with animated tagline and interactive spotlight logo
+- **GitHub contributions graph** with cached API fetch
+- **Tech stack display** organized by category (Languages, Frontend, Backend, Tools, Others)
+- **Projects section** with collapsible cards
+- **Education timeline**
+- **Full i18n** support (PT-BR / EN)
+- **Dark / Light / System** theme switching
+- **SEO** with JSON-LD structured data, OpenGraph, sitemap, and robots.txt
+- **Fluid gradient text** with mouse-following effect
+
+
+## License
+
+Private project. All rights reserved.
