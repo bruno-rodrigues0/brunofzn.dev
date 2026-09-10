@@ -1,19 +1,19 @@
-import { CodeXml } from "lucide-react";
+import { CodeXml, Drone } from "lucide-react";
 import { Project } from "../types";
 import { PythonIcon } from "../components/icons";
 import { BSMark } from "../components/bs-mark";
 
 export const PROJECTS: Project[] = [
   {
-    key: "ayuwoke",
-    title: "Ayuwoke Time CInmulator",
-    url: "https://github.com/bruno-rodrigues0/projeto-ip",
-    labels: ["Python", "pygame", "numpy"],
-    logo: <PythonIcon className="w-5"/>,
+    key: "colibricf",
+    title: "Colibri CF",
+    url: "https://github.com/EDUCA-DRONES/Colibri_CF",
+    labels: ["Python", "Clover", "dronekit", "pymavlink", "rospy"],
+    logo: <Drone className="w-5"/>,
     period: {
-      start: "05.2026",
-      end: "06.2026",
-    },
+      start: "10.2025",
+      end: null
+    }
   },
 
   {
@@ -25,6 +25,18 @@ export const PROJECTS: Project[] = [
     period: {
       start: "08.2026",
       end: null,
+    },
+  },
+
+  {
+    key: "ayuwoke",
+    title: "Ayuwoke Time CInmulator",
+    url: "https://github.com/bruno-rodrigues0/projeto-ip",
+    labels: ["Python", "pygame", "numpy"],
+    logo: <PythonIcon className="w-5"/>,
+    period: {
+      start: "05.2026",
+      end: "06.2026",
     },
   },
 

@@ -72,6 +72,16 @@
         "Git e GitHub."
       ]
     },
+    "colibricf": {
+      "intro": "Colibri Code Functions é um projeto colaborativo desenvolvido pela equipe Educa Drones. Oferece uma interface simplificada e intuitiva para programar operações de drones, construída sobre o framework Clover para controle de voo autônomo.",
+      "bullets": [
+        "Programação paralela para sistemas de câmera e log.",
+        "Controle de Câmera - Gerencia operações da câmera do drone e captura de imagens.",
+        "Controle de Servo - Controla mecanismos de servo para gimbal da câmera ou manipulação de carga.",
+        "Controle de Voo - Executa decolagem, pouso e operações de voo autônomo.",
+        "Gerenciamento de Tarefas - Estrutura e agenda missões complexas de drones."
+      ]
+    },
     "brunofzn": {
       "intro": "Um portfólio pixel-perfect inspirado em chanhdai.com.",
       "bullets": [
