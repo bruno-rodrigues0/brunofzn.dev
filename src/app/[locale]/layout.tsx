@@ -4,9 +4,10 @@ import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { AUTHOR, LINKS, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { AUTHOR, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { USER } from "@/constants/user";
 import { URL } from "url";
-import { routing } from "../../i18n/routing";
+import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -33,27 +34,27 @@ const jsonLd = {
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#bruno`,
-      name: "Bruno Silva",
-      alternateName: "bruno-rodrigues0",
-      jobTitle: "Web Developer",
+      name: `${USER.firstName} ${USER.lastName}`,
+      alternateName: USER.username,
+      jobTitle: USER.jobTitle,
       url: SITE_URL,
       image: new URL(OPENGRAPH_IMAGE, SITE_URL).toString(),
-      email: "brunorodriguesmtv0@gmail.com",
-      knowsLanguage: ["English", "Portuguese"],
+      email: atob(USER.emailEncoded),
+      knowsLanguage: USER.knowsLanguage,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Recife",
-        addressRegion: "PE",
-        addressCountry: "BR",
+        addressLocality: USER.address.city,
+        addressRegion: USER.address.region,
+        addressCountry: USER.address.country,
       },
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "CIn - UFPE",
       },
       sameAs: [
-        LINKS.githubProfile,
-        LINKS.linkedIn,
-        LINKS.whatsapp,
+        USER.githubUrl,
+        USER.linkedIn,
+        USER.whatsapp,
       ],
     },
     {
@@ -87,12 +88,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
     creator: AUTHOR,
     authors: {name: AUTHOR, url: SITE_URL},
     category: "portfolio",
-    keywords: [
-      "next.js developer", "portfolio", "shadcnui",
-      "pixel-perfect", "web developer",
-      "recife", "typescript developer", "backend developer",
-      "frontend developer", "full stack",
-    ],
+    keywords: USER.keywords,
     alternates: {
       canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: {

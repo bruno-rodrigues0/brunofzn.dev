@@ -3,6 +3,8 @@
 import { useLocale, useTranslations } from "next-intl";
 import { ReactNode, useEffect, useState } from "react";
 import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "lucide-react";
+import { USER } from "@/constants/user";
+import { DOMAIN } from "@/lib/site-config";
 
 const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}
 
@@ -25,9 +27,9 @@ export default function Overview(){
           <dl className="flex flex-col gap-4 font-sans">
               <OverviewItem term={t("job")} text={t("jobValue")}><CodeXml size={15}/></OverviewItem>
               <OverviewItem term={t("location")} text={t("locationValue")}><MapPin size={15}/></OverviewItem>
-              <OverviewItem term={t("email")} text={t("emailValue")}><Mail size={15}/></OverviewItem>
-              <OverviewItem term={t("phone")} text={t("phoneValue")}><Phone size={15}/></OverviewItem>
-              <OverviewItem term="Site" text="brunofzn.dev"><Link size={15}/></OverviewItem>
+              <OverviewItem term={t("email")} text={atob(USER.emailEncoded)}><Mail size={15}/></OverviewItem>
+              <OverviewItem term={t("phone")} text={atob(USER.phoneNumberEncoded)}><Phone size={15}/></OverviewItem>
+              <OverviewItem term="Site" text={DOMAIN}><Link size={15}/></OverviewItem>
           </dl>
         </div>
 
