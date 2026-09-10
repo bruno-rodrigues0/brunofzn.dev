@@ -29,7 +29,7 @@ export function SocialLink({children, href, label}: {children: ReactNode, href: 
   return (
     <li className="border border-line rounded-sm p-1.5 bg-primary-foreground">
       <HoverCard>
-        <HoverCardTrigger delay={0} closeDelay={0}>
+        <HoverCardTrigger render={<div></div>} delay={0} closeDelay={0}>
           <Link href={href} target="_blank" aria-label={label} >
             {children}
           </Link>

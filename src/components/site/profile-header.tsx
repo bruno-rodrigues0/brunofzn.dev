@@ -31,7 +31,7 @@ export default async function ProfileHeader() {
           <Separator className="absolute left-0 w-screen -z-10"/>
           <div className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <Image
-              className="ring-border ring-offset-background rounded-full w-33 h-33 p-1"
+              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1"
               loading="eager"
               src={Me}
               alt="Photo of Bruno Silva"

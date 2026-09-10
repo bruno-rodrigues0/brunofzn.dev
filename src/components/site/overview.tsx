@@ -6,7 +6,7 @@ import { Clock, CodeXml, Link, LucideProps, Mail, MapPin, Mars, Phone} from "luc
 import { USER } from "@/constants/user";
 import { DOMAIN } from "@/lib/site-config";
 
-const localeOpts: Intl.DateTimeFormatOptions = {timeZone: 'America/Sao_Paulo', hour: 'numeric', minute: 'numeric'}
+const localeOpts: Intl.DateTimeFormatOptions = {timeZone: USER.timeZone, hour: 'numeric', minute: 'numeric'}
 
 export default function Overview(){
   const t = useTranslations("overview")
