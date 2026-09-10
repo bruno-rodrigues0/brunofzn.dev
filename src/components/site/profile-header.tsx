@@ -5,6 +5,7 @@ import { TextFlip } from "../text-flip";
 import { Separator } from "../ui/separator";
 import { SpotlightLogo } from "../spotlight-logo";
 import { getTranslations } from "next-intl/server";
+import { USER } from "../../constants/user";
 
 export default async function ProfileHeader() {
   const t = await getTranslations("tagLine")
@@ -30,7 +31,8 @@ export default async function ProfileHeader() {
           <Separator className="absolute left-0 w-screen -z-10"/>
           <div className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <Image
-              className="ring-border ring-offset-background rounded-full w-33 h-33 p-1"
+              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1"
+              loading="eager"
               src={Me}
               alt="Photo of Bruno Silva"
             />
@@ -42,7 +44,7 @@ export default async function ProfileHeader() {
         <div className="z-1 mt-auto border-t border-line">
           <div className="flex items-center gap-2 pl-4">
             <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold z-100">
-              Bruno Silva
+              {USER.firstName} {USER.lastName}
             </h1>
 
             <Verified className="size-4.5 select-none" aria-hidden />

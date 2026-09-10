@@ -1,3 +1,4 @@
+import { Timezone } from "next-intl"
 import { ReactNode } from "react"
 
 export type Project = {
@@ -30,4 +31,29 @@ export type Education = {
     end: string | null,
   },
   labels ?: string[],
+}
+
+export type User = {
+  firstName: string
+  lastName: string
+  fullName: string
+  username: string
+  knowsLanguage: string[],
+  gender: string
+  address: {
+    city: string
+    region: string
+    country: string
+  }
+  phoneNumberEncoded: string
+  emailEncoded: string
+  website: string
+  githubUrl: string,
+  linkedIn: string,
+  whatsapp: string,
+  jobTitle: string
+  avatarUrl: string
+  timeZone: Timezone
+  keywords: string[]
+
 }
