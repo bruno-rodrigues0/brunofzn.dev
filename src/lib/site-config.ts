@@ -1,6 +1,6 @@
 export const SITE_URL = "https://brunofzn.vercel.app"
 export const SITE_NAME = "Bruno Silva - Web Developer"
 export const AUTHOR = "Bruno Rodrigues e Silva"
-export const DOMAIN = "brunofzn.vercel.dev"
+export const DOMAIN = "brunofzn.vercel.app"
 export const OPENGRAPH_IMAGE = "./opengraph-image.jpg"
 export const SOURCECODE = "https://github.com/bruno-rodrigues0/brunofzn.dev"
