@@ -1,14 +1,38 @@
+"use client"
 import Image from "next/image";
 import Me from "@public/me.webp"
-import { Verified } from "lucide-react";
+import { Verified, MousePointerClick} from "lucide-react";
 import { TextFlip } from "../text-flip";
 import { Separator } from "../ui/separator";
 import { SpotlightLogo } from "../spotlight-logo";
-import { getTranslations } from "next-intl/server";
-import { USER } from "../../constants/user";
+import { USER } from "@/constants/user";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-export default async function ProfileHeader() {
-  const t = await getTranslations("tagLine")
+const COUNTER_STORAGE_KEY = "counter"
+
+export default function ProfileHeader() {
+  const t = useTranslations("tagLine")
+  const [counter, setCounter] = useState<number>(0)
+  const [showCounter, setShowCounter] = useState(false)
+
+  useEffect(() => {
+    const localCounter = localStorage.getItem(COUNTER_STORAGE_KEY)
+
+    if (localCounter !== null) {
+      const set = () => setCounter(Number(localCounter))
+      set()
+    }
+  }, [])
+
+  const handleCounterInc = () => {
+    setCounter((prev: number) => {
+      prev += 1
+      localStorage.setItem(COUNTER_STORAGE_KEY, prev.toString())
+
+      return prev
+    })
+  }
 
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
@@ -20,7 +44,7 @@ export default async function ProfileHeader() {
               <div className="absolute -rotate-30 border-t border-secondary w-200 top-35 left-33 -z-10"></div>
           </div>
           <div className="w-full h-full max-sm:max-h-25 z-20">
-            <SpotlightLogo/>
+            <SpotlightLogo onClick={handleCounterInc} />
           </div>
           <figcaption className="pointer-events-none absolute right-0 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1.</figcaption>
         </figure>
@@ -47,15 +71,15 @@ export default async function ProfileHeader() {
               {USER.firstName} {USER.lastName}
             </h1>
 
-            <Verified className="size-4.5 select-none" aria-hidden />
+            <Verified className="size-4.5 select-none" aria-hidden onClick={() => setShowCounter(prev => !prev)}/>
           </div>
 
           <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
             <TextFlip className="text-sidebar-ring">
               {(t.raw('lines') as string[]).map((line, i) => (
                 <span key={i}>{line}</span>
-              ))
-              }
+              ))}
+              {showCounter && <span className="flex gap-2"> <MousePointerClick className="w-4"/> Clicks: <i className="font-mono">{counter}</i></span>}
             </TextFlip>
           </div>
         </div>

@@ -34,7 +34,7 @@ const transition: Transition = {
  * [Fast Isometric Plugin](https://www.figma.com/community/plugin/1249759048471403961).
  * Inspired by tailwindcss.com.
  */
-export function SpotlightLogo() {
+export function SpotlightLogo({onClick}: {onClick: () => void}) {
   const id = useId()
   const ids = {
     facePattern: `spotlight-logo-face-pattern-${id}`,
@@ -98,7 +98,7 @@ export function SpotlightLogo() {
       aria-hidden
       initial="normal"
       whileTap="pressed"
-      onTap={() => play()}
+      onTap={() => {play(); onClick()}}
     >
       <defs>
         <pattern
