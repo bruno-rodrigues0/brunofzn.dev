@@ -118,9 +118,9 @@ export const generateMetadata = async (): Promise<Metadata> => {
       images: [
         {
           url: OPENGRAPH_IMAGE,
-          width: 1164,
-          height: 654,
-          alt: "Photo of Bruno Silva"
+          width: 987,
+          height: 862,
+          alt: "brunofzn.dev screenshot"
         }
       ],
       locale,
