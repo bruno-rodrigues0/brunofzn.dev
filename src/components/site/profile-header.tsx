@@ -60,11 +60,11 @@ export default function ProfileHeader() {
         <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
           <div className="max-sm:hidden">
               <div className="absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10"></div>
-              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 -right-55.5 -z-10"></div>
-              <div className="absolute -rotate-30 border-t border-secondary w-200 top-35 left-33 -z-10"></div>
+              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10"></div>
+              <div className="absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10"></div>
           </div>
           <div className="w-full h-full max-sm:max-h-25 z-20">
-            <SpotlightLogo onClick={handleCounterInc} />
+            <SpotlightLogo onClick={handleCounterInc} className="w-180 absolute -top-16 -left-16 max-sm:w-90 max-sm:h-90 max-sm:-top-25 max-sm:-left-8"/>
           </div>
           <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1</figcaption>
         </figure>
