@@ -98,7 +98,12 @@ export default function ProfileHeader() {
               {(t.raw('lines') as string[]).map((line, i) => (
                 <span key={i}>{line}</span>
               ))}
-              {showCounter && <span className="flex gap-2"> <MousePointerClick className="w-4"/> Clicks: <i className="font-mono">{counter}</i></span>}
+              <span className="flex gap-2"> 
+                { showCounter 
+                  ? <><MousePointerClick className="w-4"/> {t("eastereggLines.active", {count: counter})} </>
+                  : t('eastereggLines.deactive')
+                }
+              </span>
             </TextFlip>
           </div>
         </div>

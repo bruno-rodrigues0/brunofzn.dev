@@ -17,7 +17,11 @@
       "Computer Science Student.",
       "Creating with code.",
       "Open Source contributor."
-    ]
+    ],
+    "eastereggLines": {
+      "active": "Clicks: {count}",
+      "deactive": "Atention to small things."
+    }
   },
   "overview": {
     "job": "Job",

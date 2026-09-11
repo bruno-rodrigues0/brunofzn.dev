@@ -17,7 +17,11 @@
       "Estudante de Ciência da Computação.",
       "Criando com código.",
       "Contribuidor de código aberto."
-    ]
+    ],
+    "eastereggLines": {
+      "active": "Cliques: {count}",
+      "deactive": "Atenção aos pequenos detalhes."
+    }
   },
   "overview": {
     "job": "Cargo",
