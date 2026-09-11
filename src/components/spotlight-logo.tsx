@@ -41,6 +41,7 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
   const ids = {
     facePattern: `spotlight-logo-face-pattern-${id}`,
     faceFill: `spotlight-logo-face-fill-${id}`,
+    faceStroke: `spotlight-logo-face-stroke-${id}`,
     stroke: `spotlight-logo-stroke-${id}`,
     radialGradient: `spotlight-logo-radial-gradient-${id}`,
   }
@@ -55,13 +56,13 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
   const mouseX = useMotionValue(0.5)
   const mouseY = useMotionValue(0.5)
 
-  const cx = useSpring(useTransform(mouseX, [0, 1], [0, 556]), {
+  const cx = useSpring(useTransform(mouseX, [0, 1], [0, 264]), {
     stiffness: 300,
     damping: 30,
     mass: 0.1,
   })
 
-  const cy = useSpring(useTransform(mouseY, [0, 1], [0, 354]), {
+  const cy = useSpring(useTransform(mouseY, [0, 1], [0, 156]), {
     stiffness: 300,
     damping: 30,
     mass: 0.1,
@@ -92,7 +93,7 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
     <motion.svg
       ref={ref}
       className={cn(
-        "w-full h-auto object-contain touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_12%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_16%,var(--background))]",
+        "w-full h-auto object-contain touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_16%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_25%,var(--background))]",
         className
       )}
       viewBox="0 0 264 152"
@@ -125,7 +126,7 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
           id={ids.faceFill}
           variants={{
             normal: {
-              y: -1,
+              y: 0,
             },
             pressed: {
               y: 8,
@@ -133,7 +134,23 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
           }}
           transition={transition}
         >
-          <path d="M96.9948 120L124.708 104L138.564 112L96.9948 136L27.7128 96L69.282 72L83.1384 80L55.4256 96L69.282 104L96.9948 88L110.851 96L83.1384 112L96.9948 120ZM110.851 80L96.9948 88L83.1384 80L96.9948 72L110.851 80ZM138.564 96L124.708 104L110.851 96L124.708 88L138.564 96ZM124.708 56L110.851 48L152.42 24L166.277 32L124.708 56ZM124.708 72L110.851 64L124.708 56L138.564 64L124.708 72ZM138.564 64L166.277 48L180.133 56L152.42 72L138.564 64ZM207.846 56L193.99 64L180.133 56L193.99 48L207.846 56ZM193.99 64L207.846 72L166.277 96L152.42 88L193.99 64Z" />
+          <path d="M96.9948 120L124.708 104L138.564 112L96.9948 136L27.7128 96L69.282 72L83.1384 80L55.4256 96L69.282 104L96.9948 88L110.851 96L83.1384 112L96.9948 120ZM110.851 80L96.9948 88L83.1384 80L96.9948 72L110.851 80ZM138.564 96L124.708 104L110.851 96L124.708 88L138.564 96ZM124.708 56L110.851 48L152.42 24L166.277 32L124.708 56ZM124.708 72L110.851 64L124.708 56L138.564 64L124.708 72ZM138.564 64L166.277 48L180.133 56L152.42 72L138.564 64ZM207.846 56L193.99 64L180.133 56L193.99 48L207.846 56ZM193.99 64L207.846 72L166.277 96L152.42 88L193.99 64Z"/>
+        </motion.g>
+
+        <motion.g
+          id={ids.faceStroke}
+          variants={{
+            normal: {
+              y: 0,
+            },
+            pressed: {
+              y: 8,
+            },
+          }}
+          transition={transition}
+          strokeWidth={.5}
+        >
+          <path d="M96.9948 120L124.708 104L138.564 112L96.9948 136L27.7128 96L69.282 72L83.1384 80L55.4256 96L69.282 104L96.9948 88L110.851 96L83.1384 112L96.9948 120ZM110.851 80L96.9948 88L83.1384 80L96.9948 72L110.851 80ZM138.564 96L124.708 104L110.851 96L124.708 88L138.564 96ZM124.708 56L110.851 48L152.42 24L166.277 32L124.708 56ZM124.708 72L110.851 64L124.708 56L138.564 64L124.708 72ZM138.564 64L166.277 48L180.133 56L152.42 72L138.564 64ZM207.846 56L193.99 64L180.133 56L193.99 48L207.846 56ZM193.99 64L207.846 72L166.277 96L152.42 88L193.99 64Z"/>
         </motion.g>
 
         <motion.path
@@ -141,20 +158,24 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
           fillRule={"evenodd"}
           clipRule={"evenodd"}
           strokeLinejoin= "round"
-          strokeWidth={.5}
+          strokeWidth={.3}
           variants={{
             normal: {
               d: [
+
                 "M138.564 112L96.9948 136L27.7128 96V106L96.9948 146L138.564 122V112Z",
                 "M83.1384 80L55.4256 96V106L83.1384 90V80Z",
                 "M110.851 96L83.1384 112V122L110.851 106V96Z",
                 "M110.851 80L96.9948 88L83.1384 80V90L96.9948 98L110.851 90V80Z",
-                "M138.564 96L124.708 104L110.851 96V106L124.708 114L138.564 106V96Z",
+                "M138.564 96L124.708 104L110.851 96V106L124.708 114L138.564 106V96Z", // B
+
                 "M166.277 32L124.708 56L110.851 48V58L124.708 66L166.277 42V32Z",
                 "M138.564 64L124.708 72L110.851 64V74L124.708 82L138.564 74V64Z",
                 "M180.133 56L152.42 72L138.564 64V74L152.42 82L180.133 66V56Z",
                 "M207.846 56L193.99 64L180.133 56V66L193.99 74L207.846 66V56Z",
-                "M207.846 72L166.277 96L152.42 88V98L166.277 106L207.846 82V72Z"
+                "M207.846 72L166.277 96L152.42 88V98L166.277 106L207.846 82V72Z", // S
+
+
               ].join(""),
             },
             pressed: {
@@ -180,11 +201,11 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
           id={ids.radialGradient}
           cx={cx}
           cy={cy}
-          r="200"
+          r="150"
           gradientUnits="userSpaceOnUse"
         >
           <stop
-            className="dark:[stop-color:#888]"
+            className="dark:[stop-color:#999]"
             stopColor="var(--color-zinc-700)"
           />
           <stop
@@ -199,6 +220,10 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
       <use href={`#${ids.stroke}`} fill="var(--background)" fillRule="evenodd" clipRule="evenodd" />
       <use href={`#${ids.stroke}`} stroke="var(--stroke)" />
       <use href={`#${ids.stroke}`} stroke={`url(#${ids.radialGradient})`} />
+
+      <use href={`#${ids.faceStroke}`} fill="var(--background)" fillRule="evenodd" clipRule="evenodd" />
+      <use href={`#${ids.faceStroke}`} stroke="var(--stroke)" />
+      <use href={`#${ids.faceStroke}`} stroke={`url(#${ids.radialGradient})`} />
 
       <use href={`#${ids.faceFill}`} className="fill-background" />
       <use href={`#${ids.faceFill}`} fill={`url(#${ids.facePattern})`} />
