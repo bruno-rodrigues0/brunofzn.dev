@@ -8,6 +8,9 @@ import { SpotlightLogo } from "../spotlight-logo";
 import { USER } from "@/constants/user";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import { useSound } from "../../hooks/soundcn/use-sound";
+import { click005Sound } from "../../lib/click-005";
+import { click004Sound } from "../../lib/click-004";
 
 const COUNTER_STORAGE_KEY = "counter"
 
@@ -15,6 +18,8 @@ export default function ProfileHeader() {
   const t = useTranslations("tagLine")
   const [counter, setCounter] = useState<number>(0)
   const [showCounter, setShowCounter] = useState(false)
+  const [playActive] = useSound(click004Sound)
+  const [playDeactive] = useSound(click005Sound)
 
   useEffect(() => {
     const localCounter = localStorage.getItem(COUNTER_STORAGE_KEY)
@@ -31,6 +36,20 @@ export default function ProfileHeader() {
       localStorage.setItem(COUNTER_STORAGE_KEY, prev.toString())
 
       return prev
+    })
+  }
+
+  const handleShowCounter = () => {
+    setShowCounter(prev => {
+      const newValue = !prev
+
+      if (newValue) {
+        playActive({ volume: .2 })
+      } else {
+        playDeactive({ volume: .2 })
+      }
+
+      return newValue
     })
   }
 
@@ -71,7 +90,7 @@ export default function ProfileHeader() {
               {USER.firstName} {USER.lastName}
             </h1>
 
-            <Verified className="size-4.5 select-none" aria-hidden onClick={() => setShowCounter(prev => !prev)}/>
+            <Verified className="size-4.5 select-none" aria-hidden onClick={handleShowCounter}/>
           </div>
 
           <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
