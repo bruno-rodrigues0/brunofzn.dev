@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useSound } from "../../hooks/soundcn/use-sound";
 import { click005Sound } from "../../lib/click-005";
 import { click004Sound } from "../../lib/click-004";
+import { VerifiedSolidIcon } from "../icons";
 
 const COUNTER_STORAGE_KEY = "counter"
 
@@ -65,7 +66,7 @@ export default function ProfileHeader() {
           <div className="w-full h-full max-sm:max-h-25 z-20">
             <SpotlightLogo onClick={handleCounterInc} />
           </div>
-          <figcaption className="pointer-events-none absolute right-0 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1.</figcaption>
+          <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1</figcaption>
         </figure>
       </div>
 
@@ -90,7 +91,10 @@ export default function ProfileHeader() {
               {USER.firstName} {USER.lastName}
             </h1>
 
-            <Verified className="size-4.5 select-none" aria-hidden onClick={handleShowCounter}/>
+            {showCounter 
+              ? <VerifiedSolidIcon className="size-4.5 select-none" aria-hidden onClick={handleShowCounter} />
+              : <Verified className="size-4.5 select-none" aria-hidden onClick={handleShowCounter} />
+            }
           </div>
 
           <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
