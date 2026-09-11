@@ -17,7 +17,7 @@ export default async function SiteHeader(){
       <header className="sticky top-0 z-50 h-auto py-2 items-center bg-background">
         <div className="flex justify-between max-w-180 mx-auto px-2">
           <Link href="/" className="content-center" aria-label="Logo">
-            <BSMark/>
+            <BSMark />
           </Link>
 
           <div className="flex gap-2 items-center">
