@@ -36,7 +36,7 @@ export default function Overview(){
       <div className="flex items-end">
         <dl className="flex flex-col gap-4 font-mono">
           <OverviewItem term={t("time")} text={(
-            <>{time} <span className="text-muted-foreground">(GMT-03)</span></>
+            <>{time} <span className="text-ring text-base font-handwrite"> &#47;&#47; UTC-03</span></>
           )}><Clock size={15}/></OverviewItem>
           <OverviewItem term={t("pronouns")} text={t("pronounsValue")}><Mars size={15}/></OverviewItem>
         </dl>

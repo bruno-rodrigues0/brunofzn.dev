@@ -7,14 +7,13 @@ import { Link } from "@/i18n/navigation";
 import { Separator } from "../ui/separator";
 import { DOMAIN, SITE_URL, SOURCECODE } from "@/lib/site-config";
 import { GithubIcon, LinkedInIconSolid, VercelIcon, WhatsappIcon } from "../icons";
-import { format } from "date-fns";
 import { USER } from "../../constants/user";
 
 const INSPIRE_BY = ["Tailwind CSS", "shadcn/ui", "Vercel", "chanhdai.com"]
 
 export function SiteFooter() {
   const locale = useLocale()
-  const [date] = useState(format(new Date().toLocaleDateString(), locale === "pt-BR" ?  'dd.MM.yyyy' : 'MM.dd.yyyy',))
+  const [date] = useState(new Intl.DateTimeFormat(locale).format(new Date()))
   const t = useTranslations('footer')
 
   return (
