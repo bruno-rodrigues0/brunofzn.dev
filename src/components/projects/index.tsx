@@ -18,10 +18,7 @@ export default function Projects() {
   const tc = useTranslations("common")
   const [playOn] = useSound(click004Sound)
   const [playOff] = useSound(click005Sound)
-
-  const handleShowMore = () => {
-    setShowMore(prev => {
-      const newValue = !prev
+const handleShowMore = () => { setShowMore(prev => { const newValue = !prev
 
       if (newValue) {
         playOn({ volume: .3 })
