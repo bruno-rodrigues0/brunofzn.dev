@@ -7,16 +7,21 @@ import { Separator } from "../ui/separator"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { AnimatePresence } from "motion/react"
 import { motion } from "motion/react"
+import { useSound } from "../../hooks/soundcn/use-sound"
+import { click004Sound } from "../../lib/click-004"
+import { click005Sound } from "../../lib/click-005"
 
 export default function AboutMe(){
   const t = useTranslations('about')
   const tc = useTranslations('common')
+  const [playOn] = useSound(click004Sound)
+  const [playOff] = useSound(click005Sound)
+  const [showMore, setShowMore] = useState<boolean>(false)
+  const paragraphs = t.raw('paragraphs') as string[]
   const time = Number(new Date().toLocaleTimeString("pt-BR", {
     hour: 'numeric'
   }))
 
-  const [showMore, setShowMore] = useState<boolean>(false)
-  const paragraphs = t.raw('paragraphs') as string[]
 
   const getGreeting = () => {
     if (time >= 6 && time < 12) {
@@ -29,6 +34,20 @@ export default function AboutMe(){
   }
 
   const [greeting] = useState<string>(getGreeting())
+
+  const handleShowMore = () => {
+    setShowMore(prev => {
+      const newValue = !prev
+
+      if (newValue) {
+        playOn({ volume: .3 })
+      } else {
+        playOff({ volume: .3 })
+      }
+
+      return newValue
+    })
+  }
 
   return (
     <section id="about" className="border-x border-line w-full pt-8 p-4">
@@ -66,7 +85,7 @@ export default function AboutMe(){
 
       <Separator className="absolute left-0" />
       <div className="flex justify-center pt-4">
-        <Button onClick={() => setShowMore(prev => !prev)} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
+        <Button onClick={handleShowMore} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
           {showMore ? tc('showLess') : tc('showMore')} {showMore ? <ChevronUp /> : <ChevronDown />}
         </Button>
       </div>

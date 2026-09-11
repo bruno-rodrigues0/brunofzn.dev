@@ -9,20 +9,28 @@ import { Separator } from "../ui/separator"
 import { GraduationCapIcon, Infinity } from "lucide-react"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
+import { useSound } from "../../hooks/soundcn/use-sound"
+import { bookFlip3Sound } from "../../lib/book-flip-3"
+import { bookCloseSound } from "../../lib/book-close"
 
 export function EducationItem({ item, defaultOpen }: { item: Education, defaultOpen: boolean}) {
+  const t = useTranslations('education')
   const [open, setOpen] = useState<boolean>(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
+  const [playOpen] = useSound(bookFlip3Sound)
+  const [playClose] = useSound(bookCloseSound)
+
   const {start, end} = item.period
-  const t = useTranslations('education')
   const bullets = t.raw(`${item.key}.bullets`) as (string | {text:string, items: string[]})[]
 
   const handleOpenChange = () => {
     setOpen(prev => !prev)
     if (open) {
       chevronsRef.current?.stopAnimation()
+      playClose({ volume: .3, playbackRate: .9 })
     } else {
       chevronsRef.current?.startAnimation()
+      playOpen({ volume: .3 })
     }
   }
 

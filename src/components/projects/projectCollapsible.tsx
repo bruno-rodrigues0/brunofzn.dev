@@ -9,12 +9,18 @@ import { Infinity, Link as LinkIcon } from "lucide-react"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 import { ChevronsUpDownIcon, ChevronsUpDownIconHandle } from "../chevrons-up-down-icon"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "../ui/collapsible"
+import { useSound } from "../../hooks/soundcn/use-sound"
+import { bookFlip3Sound } from "../../lib/book-flip-3"
+import { bookCloseSound } from "../../lib/book-close"
 
 export default function ProjectCollapsible({project, defaultOpen = false}: {project: Project, defaultOpen?: boolean}) {
+  const t = useTranslations('projects')
   const [open, setOpen] = useState(defaultOpen)
   const chevronsRef = useRef<ChevronsUpDownIconHandle>(null)
+  const [playOpen] = useSound(bookFlip3Sound)
+  const [playClose] = useSound(bookCloseSound)
+
   const {start, end} = project.period
-  const t = useTranslations('projects')
   const intro = t(`${project.key}.intro`)
   const bullets = t.raw(`${project.key}.bullets`) as string[]
 
@@ -26,8 +32,10 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
     setOpen(prev => !prev)
     if (open) {
       chevronsRef.current?.stopAnimation()
+      playClose({ volume: .3, playbackRate: .9 })
     } else {
       chevronsRef.current?.startAnimation()
+      playOpen({ volume: .3 })
     }
   }
 
