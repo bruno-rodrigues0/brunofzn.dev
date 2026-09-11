@@ -4,8 +4,11 @@ import type { JSX } from "react"
 import { useSyncExternalStore } from "react"
 import { motion } from "motion/react"
 import { useTheme } from "next-themes"
-import { MonitorIcon, SunIcon, MoonIcon } from "lucide-react"
+import { MonitorIcon, SunIcon, MoonIcon, PlayOff } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { switchOnSound } from "../lib/switch-on"
+import { useSound } from "../hooks/soundcn/use-sound"
+import { switchOffSound } from "../lib/switch-off"
 
 function ThemeOption({
   icon,
@@ -19,6 +22,7 @@ function ThemeOption({
   onClick: (value: string) => void
 }) {
   const t = useTranslations('common')
+
   return (
     <button
       data-active={isActive}
@@ -67,6 +71,8 @@ const THEME_OPTIONS = [
 
 function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()
+  const [playOn] = useSound(switchOnSound)
+  const [playOff] = useSound(switchOffSound)
 
   const isMounted = useSyncExternalStore(
     () => () => {},
@@ -76,6 +82,28 @@ function ThemeSwitcher() {
 
   if (!isMounted) {
     return <div className="flex h-8 w-24" />
+  }
+
+  const changeTheme = (value: string) => {
+    setTheme(prev => {
+      if (prev !== value){
+        switch (value) {
+          case "dark":
+            playOff({ volume: .4})
+            break
+          case "light":
+            playOn({ volume: .4})
+            break
+          default:
+            playOff({ volume: .4})
+            break
+        }
+      }
+
+      return value
+    })
+
+
   }
 
   return (
@@ -93,7 +121,7 @@ function ThemeSwitcher() {
           icon={option.icon}
           value={option.value}
           isActive={theme === option.value}
-          onClick={setTheme}
+          onClick={changeTheme}
         />
       ))}
     </motion.div>
