@@ -136,17 +136,38 @@
       "degree": "High School",
       "field": "",
       "bullets": [
-        "Member of the largest drone team in the state of Bahia.",
-        "Two-time winner of a local programming contest.",
-        "Third place in the Santa Catarina drone competition.",
-        "Learned about web development.",
-        "Two written articles.",
+        {
+          "text": "Member of the largest drone team in the state of Bahia.",
+          "items": []
+        },
+        {
+          "text": "Two-time winner of a local programming contest.",
+          "items": []
+        },
+        {
+          "text": "Third place in the Santa Catarina drone competition.",
+          "items": []
+        },
+        {
+          "text": "Learned about web development.",
+          "items": []
+        },
+        {
+          "text": "Two written articles.",
+          "items": []
+        },
         {
           "text": "Academic projects with:",
           "items": ["Django", "PHP"]
         },
-        "Learned the basics of requirements engineering.",
-        "Learned the basics of databases."
+        {
+          "text": "Learned the basics of requirements engineering.",
+          "items": []
+        },
+        {
+          "text": "Learned the basics of databases.",
+          "items": []
+        }
       ]
     }
   },
