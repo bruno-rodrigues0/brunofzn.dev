@@ -12,6 +12,7 @@ import { useSound } from "../../hooks/soundcn/use-sound";
 import { click005Sound } from "../../lib/click-005";
 import { click004Sound } from "../../lib/click-004";
 import { VerifiedSolidIcon } from "../icons";
+import { cn } from "../../lib/utils";
 
 const COUNTER_STORAGE_KEY = "counter"
 
@@ -57,16 +58,27 @@ export default function ProfileHeader() {
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
-        <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
-          <div className="max-sm:hidden">
-              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10"></div>
-              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10"></div>
-              <div className="absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10"></div>
+        <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-48 top-1.5 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
+
+          <div>
+            <div className={cn(
+              "absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10",
+              "max-sm:w-230 max-sm:-left-126 max-sm:top-22"
+            )}/>
+            <div className={cn(
+              "absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10",
+              "max-sm:w-230 max-sm:-left-74 max-sm:top-22"
+            )}/>
+            <div className={cn(
+              "absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10", 
+              "max-sm:w-230 max-sm:-left-43 max-sm:top-22"
+            )}/>
           </div>
+
           <div className="w-full h-full max-sm:max-h-25 z-20">
             <SpotlightLogo onClick={handleCounterInc} className="w-145 absolute top-0 -left-9 max-sm:w-80 max-sm:-left-2"/>
           </div>
-          <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1</figcaption>
+          <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-600 tabular-nums select-none">Fig. 1</figcaption>
         </figure>
       </div>
 
@@ -75,7 +87,7 @@ export default function ProfileHeader() {
           <Separator className="absolute left-0 w-screen -z-10"/>
           <div className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <Image
-              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1"
+              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1 z-100"
               loading="eager"
               src={Me}
               alt="Photo of Bruno Silva"
