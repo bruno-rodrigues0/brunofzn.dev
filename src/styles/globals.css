@@ -50,6 +50,7 @@
 }
 
 :root {
+  --line: color-mix(in oklab, var(--ring) 54%, var(--background));
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -133,3 +134,12 @@
 @utility link-underline {
     @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
 }
+
+@utility screen-line-top {
+  @apply relative before:absolute before:top-0 before:left-[-100vw] before:-z-1 before:h-px before:w-[200vw] before:bg-accent;
+}
+
+@utility screen-line-bottom {
+  @apply relative after:absolute after:bottom-0 after:left-[-100vw] after:-z-1 after:h-px after:w-[200vw] after:bg-accent;
+}
+

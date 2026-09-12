@@ -6,7 +6,6 @@ import ProfileHeader from "@/components/site/profile-header";
 import Projects from "@/components/projects";
 import SocialLinks from "@/components/site/social-links";
 import Stack from "@/components/site/stack";
-import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
@@ -15,10 +14,7 @@ export default function Home() {
       <GreatSeparator/>
 
       <Overview/>
-      <Separator className="absolute left-0"/>
-
       <SocialLinks/>
-      <Separator className="absolute left-0"/>
 
       <GithubContrib/>
       <GreatSeparator />
@@ -43,10 +39,8 @@ export default function Home() {
 export function GreatSeparator(){
   return (
     <div className="absolute w-full left-0">
-      <Separator className="absolute left-0 bg-muted"/>
-      <div className="h-8 w-full bg-[repeating-linear-gradient(-45deg,var(--primary-foreground)_0px,var(--primary-foreground)_2px,transparent_2px,transparent_8px)] flex justify-center">
+      <div className="screen-line-top screen-line-bottom h-8 w-full bg-[repeating-linear-gradient(-45deg,var(--primary-foreground)_0px,var(--primary-foreground)_2px,transparent_2px,transparent_8px)] flex justify-center">
       </div>
-      <Separator className="absolute left-0 bg-muted"/>
     </div>
   )
 }

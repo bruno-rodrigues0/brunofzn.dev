@@ -56,21 +56,21 @@ export default function ProfileHeader() {
   }
 
   return (
-    <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
+    <section id="profile-header" className="grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
         <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-48 top-1.5 left-[55%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
 
           <div>
             <div className={cn(
-              "absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10",
+              "absolute rotate-30 border-t border-dashed border-(--line) w-250 top-40 right-44 -z-10",
               "max-sm:w-230 max-sm:-left-129 max-sm:top-22"
             )}/>
             <div className={cn(
-              "absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10",
+              "absolute rotate-30 border-t border-dashed border-(--line) w-250 top-40 -right-50.5 -z-10",
               "max-sm:w-230 max-sm:-left-74 max-sm:top-22"
             )}/>
             <div className={cn(
-              "absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10", 
+              "absolute -rotate-30 border-t border-dashed border-(--line) w-250 top-40 left-0 -z-10", 
               "max-sm:w-230 max-sm:-left-37 max-sm:top-22"
             )}/>
           </div>
@@ -83,8 +83,7 @@ export default function ProfileHeader() {
       </div>
 
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
-        <div className="mt-auto shrink-0 border-r border-line">
-          <Separator className="absolute left-0 w-screen z-10"/>
+        <div className="screen-line-top mt-auto shrink-0 border-r border-line">
             <AvatarLightsToggle className="relative group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none z-50">
               <AvatarLights
                 className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2 z-20"

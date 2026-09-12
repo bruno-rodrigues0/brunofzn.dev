@@ -7,7 +7,7 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card"
 
 export default function SocialLinks(){
   return (
-    <section className="border-x p-2 flex" id="social-links">
+    <section className="screen-line-top screen-line-bottom border-x p-2 flex" id="social-links">
       <ul className="flex gap-2 p-2">
         <SocialLink href={USER.githubUrl} label="Github">
           <GithubIcon className="w-5 h-5"/>
