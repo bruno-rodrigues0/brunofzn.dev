@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
   {
     key: "brunofzn",
     title: "brunofzn.dev",
-    url: "https://brunofzn.vercel.app",
+    url: "https://brunofzn.dev",
     labels: ["Next.js", "Typescript", "shadcn/ui", "Tailwindcss", "chanhdai.com"],
     logo: <BSMark className="w-5"/>,
     period: {
