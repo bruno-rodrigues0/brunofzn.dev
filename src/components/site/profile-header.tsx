@@ -63,7 +63,7 @@ export default function ProfileHeader() {
           <div>
             <div className={cn(
               "absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10",
-              "max-sm:w-230 max-sm:-left-126 max-sm:top-22"
+              "max-sm:w-230 max-sm:-left-129 max-sm:top-22"
             )}/>
             <div className={cn(
               "absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10",
@@ -71,12 +71,12 @@ export default function ProfileHeader() {
             )}/>
             <div className={cn(
               "absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10", 
-              "max-sm:w-230 max-sm:-left-43 max-sm:top-22"
+              "max-sm:w-230 max-sm:-left-37 max-sm:top-22"
             )}/>
           </div>
 
           <div className="w-full h-full max-sm:max-h-25 z-20">
-            <SpotlightLogo onClick={handleCounterInc} className="w-145 absolute top-0 -left-9 max-sm:w-80 max-sm:-left-2"/>
+            <SpotlightLogo onClick={handleCounterInc} className="w-145 absolute top-0 -left-9 max-sm:w-84 max-sm:-left-2"/>
           </div>
           <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-600 tabular-nums select-none">Fig. 1</figcaption>
         </figure>
@@ -98,8 +98,8 @@ export default function ProfileHeader() {
 
       <div className="flex flex-col relative z-20">
         <div className="z-1 mt-auto border-t border-line">
-          <div className="flex items-center gap-2 pl-4">
-            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold z-100">
+          <div className="flex items-center gap-2 pl-4 max-sm:pl-2">
+            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold max-sm:text-[1.7rem] z-100">
               {USER.firstName} {USER.lastName}
             </h1>
 
@@ -109,12 +109,12 @@ export default function ProfileHeader() {
             }
           </div>
 
-          <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
+          <div className="flex items-center h-13 border-t border-line py-1 pl-4 max-sm:pl-2 sm:h-9">
             <TextFlip className="text-sidebar-ring">
               {(t.raw('lines') as string[]).map((line, i) => (
                 <span key={i}>{line}</span>
               ))}
-              <span className="flex gap-2"> 
+              <span className="flex gap-2 text-wrap"> 
                 { showCounter 
                   ? <><MousePointerClick className="w-4"/> {t("eastereggLines.active", {count: counter})} </>
                   : t('eastereggLines.deactive')
