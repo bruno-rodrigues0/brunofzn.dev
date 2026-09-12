@@ -64,7 +64,7 @@ export default function ProfileHeader() {
               <div className="absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10"></div>
           </div>
           <div className="w-full h-full max-sm:max-h-25 z-20">
-            <SpotlightLogo onClick={handleCounterInc} className="w-180 absolute -top-16 -left-16 max-sm:w-90 max-sm:h-90 max-sm:-top-25 max-sm:-left-8"/>
+            <SpotlightLogo onClick={handleCounterInc} className="w-145 absolute top-0 -left-9 max-sm:w-80 max-sm:-left-2"/>
           </div>
           <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1</figcaption>
         </figure>

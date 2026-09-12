@@ -93,10 +93,10 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
     <motion.svg
       ref={ref}
       className={cn(
-        "w-full h-auto object-contain touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_16%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_25%,var(--background))]",
+        "w-full h-auto touch-manipulation [--pattern:color-mix(in_oklab,var(--foreground)_16%,var(--background))] [--stroke:color-mix(in_oklab,var(--foreground)_25%,var(--background))]",
         className
       )}
-      viewBox="0 0 264 152"
+      viewBox="27 24 180 122"
       width={264}
       height={152}
       fill="none"
@@ -104,6 +104,7 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
       aria-hidden
       initial="normal"
       whileTap="pressed"
+      preserveAspectRatio="xMidYMid meet"
       onTap={() => {play(); onClick()}}
     >
       <defs>
