@@ -89,14 +89,15 @@ export const generateMetadata = async (): Promise<Metadata> => {
     authors: {name: AUTHOR, url: SITE_URL},
     category: "portfolio",
     keywords: USER.keywords,
+    metadataBase:  new URL(SITE_URL),
     alternates: {
-      canonical: locale === routing.defaultLocale ? "/" : `/${locale}`,
+      canonical:  locale === routing.defaultLocale ? "/" : `/${locale}`,
       languages: {
         "pt-BR": "/",
-        en: "/en"
+        "en": "/en",
+        "x-default": "/"
       }
     },
-    metadataBase:  new URL(SITE_URL),
     applicationName: SITE_NAME,
 
     robots: {

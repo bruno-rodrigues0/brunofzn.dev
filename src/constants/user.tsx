@@ -15,7 +15,7 @@ export const USER: User = {
   phoneNumberEncoded: "KzU1IDM4IDk3MzcgNTY5MQ==",
   emailEncoded: "YnJ1bm9yb2RyaWd1ZXNtdHYwQGdtYWlsLmNvbQ==",
 
-  website: "https://brunofzn.vercel.app",
+  website: "https://brunofzn.dev",
   githubUrl: "https://github.com/bruno-rodrigues0",
   linkedIn: "https://www.linkedin.com/in/bruno-rodrigues0",
   whatsapp: "https://wa.me/553897375691",
