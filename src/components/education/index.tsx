@@ -22,9 +22,6 @@ export default async function Education() {
           </div>
         ))}
       </div>
-      {/* <p className="text-ring font-handwrite pt-3"> ツ</p> */}
-      <p className="text-ring font-sans pt-3"> ;) </p>
-
     </section>
   )
 }

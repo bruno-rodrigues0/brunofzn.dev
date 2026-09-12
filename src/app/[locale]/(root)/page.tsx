@@ -10,7 +10,7 @@ import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <div className="max-w-180 mx-auto">
+    <div className="max-w-180 mx-auto h-fit">
       <ProfileHeader/>
       <GreatSeparator/>
 
@@ -33,7 +33,9 @@ export default function Home() {
       <GreatSeparator />
 
       <Education />
-      <GreatSeparator />
+      <div className="h-9">
+        <GreatSeparator />
+      </div>
     </div>
   )
 }
