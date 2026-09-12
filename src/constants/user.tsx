@@ -21,7 +21,13 @@ export const USER: User = {
   whatsapp: "https://wa.me/553897375691",
 
   jobTitle: "Web Developer",
-  avatarUrl: "",
+  avatar: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
+  avatarVariants: {
+    lightOff: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
+    lightOn: "https://assets.brunofzn.dev/images/avatar_original_light.png",
+    darkOff: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
+    darkOn: "https://assets.brunofzn.dev/images/avatar_original_light.png",
+  },
   timeZone: "America/Sao_Paulo",
   keywords: [
     "bruno rodrigues", "bruno silva", "bruno-rodrigues0",

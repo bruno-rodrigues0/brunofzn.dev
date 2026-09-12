@@ -4,8 +4,7 @@ import { ReactNode } from "react"
 export type Project = {
   key: string,
   title: string,
-  period: {
-    start: string,
+  period: { start: string,
     end: string | null
   },
   labels?: string[],
@@ -52,7 +51,13 @@ export type User = {
   linkedIn: string,
   whatsapp: string,
   jobTitle: string
-  avatarUrl: string
+  avatar: string
+  avatarVariants: {
+    lightOff: string,
+    lightOn: string
+    darkOff: string,
+    darkOn: string
+  }
   timeZone: Timezone
   keywords: string[]
 

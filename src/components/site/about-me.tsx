@@ -51,11 +51,10 @@ export default function AboutMe(){
 
   return (
     <section id="about" className="border-x border-line w-full pt-8 p-4">
-      <div>
+      <div className="screen-line-bottom">
         <h2 className="font-handwrite text-3xl font-bold text-balance">{t(`greetings.${greeting}`)}!</h2>
       </div>
 
-      <Separator className="absolute left-0"/>
 
       <div className="py-4">
         <ul className="list-disc marker:text-zinc-700  marker:text-lg space-y-3 list-inside transition-[height]">
@@ -83,8 +82,7 @@ export default function AboutMe(){
         </AnimatePresence>
       </div>
 
-      <Separator className="absolute left-0" />
-      <div className="flex justify-center pt-4">
+      <div className="screen-line-top flex justify-center pt-4">
         <Button onClick={handleShowMore} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
           {showMore ? tc('showLess') : tc('showMore')} {showMore ? <ChevronUp /> : <ChevronDown />}
         </Button>

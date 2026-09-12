@@ -202,11 +202,11 @@ export function SpotlightLogo({className, onClick}: {className?: string, onClick
           id={ids.radialGradient}
           cx={cx}
           cy={cy}
-          r="150"
+          r="100"
           gradientUnits="userSpaceOnUse"
         >
           <stop
-            className="dark:[stop-color:#999]"
+            className="dark:[stop-color:#bbb]"
             stopColor="var(--color-zinc-700)"
           />
           <stop

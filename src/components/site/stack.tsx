@@ -41,24 +41,22 @@ export default async function Stack() {
   ]
 
   return(
-    <section className="border-x border-line pt-8 p-4" id="stack">
-      <h2 className="text-4xl font-sans font-medium text-balance">{t("title")}</h2>
-      <Separator className="absolute left-0"/>
-
-      <div className="pt-2">
-        <ul className="space-y-5">
-
-          {AREAS.map((area, index) => (
-              <StackItem key={area.key} num={`0${index}`} label={area.key}>
-                {area.value.map(item => (
-                  <Link href={item.url} key={item.key} target="_blank">
-                    <Badge variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
-                  </Link>
-                ))}
-              </StackItem>
-          ))}
-        </ul>
+    <section className="border-x border-line pt-8 p-4 pb-0" id="stack">
+      <div className="screen-line-bottom">
+        <h2 className="text-4xl font-sans font-medium text-balance">{t("title")}</h2>
       </div>
+
+      <ul>
+        {AREAS.map((area, index) => (
+            <StackItem key={area.key} num={`0${index}`} label={area.key} className="not-last:screen-line-bottom">
+              {area.value.map(item => (
+                <Link href={item.url} key={item.key} target="_blank">
+                  <Badge variant="outline" className="bg-primary-foreground">{item.icon}{item.title}</Badge>
+                </Link>
+              ))}
+            </StackItem>
+        ))}
+      </ul>
     </section>
   )
 }
@@ -66,7 +64,7 @@ export default async function Stack() {
 export function StackItem({num, label, className, children, ...props}: StackItemProps) {
   return (
     <li className={cn(
-      "grid grid-cols-6 font-mono max-sm:block max-sm:space-y-2",
+      "grid grid-cols-6 font-mono max-sm:block max-sm:space-y-2 py-4",
       className
     )} {...props}>
       <div className="col-span-2 text-[.9rem]">
