@@ -138,6 +138,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} ${handwrite.variable} h-full antialiased scroll-smooth selection:bg-primary selection:text-secondary overflow-x-hidden`}
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
     >
         <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
           <script
