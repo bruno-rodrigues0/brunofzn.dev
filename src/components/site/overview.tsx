@@ -24,22 +24,22 @@ export default function Overview(){
   return (
     <section className="border-x border-line pt-12 p-4 grid grid-cols-2 max-sm:grid-cols-1 gap-4">
       <div>
-        <dl className="flex flex-col gap-4 font-sans">
+        <div className="flex flex-col gap-4 font-sans">
           <OverviewItem term={t("job")} text={t("jobValue")}> <CodeXml size={15}/> </OverviewItem>
           <OverviewItem term={t("location")} text={t("locationValue")}> <MapPin size={15}/> </OverviewItem>
           <OverviewItem term={t("email")} text={atob(USER.emailEncoded)}> <Mail size={15}/> </OverviewItem>
           <OverviewItem term={t("phone")} text={atob(USER.phoneNumberEncoded)}> <Phone size={15}/> </OverviewItem>
           <OverviewItem term="Site" text={DOMAIN}> <Link size={15}/> </OverviewItem>
-        </dl>
+        </div>
       </div>
 
       <div className="flex items-end">
-        <dl className="flex flex-col gap-4 font-mono">
+        <div className="flex flex-col gap-4 font-mono">
           <OverviewItem term={t("time")} text={(
             <>{time} <span className="text-ring text-base font-handwrite"> &#47;&#47; UTC-03</span></>
           )}><Clock size={15}/></OverviewItem>
           <OverviewItem term={t("pronouns")} text={t("pronounsValue")}><Mars size={15}/></OverviewItem>
-        </dl>
+        </div>
       </div>
     </section>
   )
@@ -47,13 +47,15 @@ export default function Overview(){
 
 export function OverviewItem({children, term, text}: {children: ReactNode, term:string, text:string | ReactNode}) {
   return(
-    <div className="flex gap-2 items-center text-sm font-medium">
-      <IconBox> {children} </IconBox>
-      <dt className="sr-only">{term}</dt>
+    <dl className="flex gap-2 items-center text-sm font-medium">
+      <IconBox aria-hidden > {children} </IconBox>
+      <dt className="sr-only">
+        {term}
+      </dt>
       <dd>
         {text}
       </dd>
-    </div>
+    </dl>
   )
 }
 

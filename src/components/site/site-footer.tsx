@@ -18,7 +18,7 @@ export function SiteFooter() {
 
   return (
     <>
-      <footer className="border-x border-line pt-8 max-w-180 mx-auto text-sm" id="credits">
+      <footer className="border-x border-line max-w-180 mx-auto text-sm" id="credits">
         <div className="flex justify-between px-4 py-2 flex-wrap items-center">
           <p><Link href={SITE_URL} className="underline text-primary">{DOMAIN}</Link></p>
           <p className="text-ring text-xs">{t('caption')}</p>

@@ -48,8 +48,8 @@ export default async function SiteHeader(){
             </HoverCard>
           </div>
         </div>
+        <Separator className="absolute mt-2 left-0 top-10 z-100"/>
       </header>
-      <Separator className="fixed mt-2 left-0 top-10 z-100"/>
     </>
   )
 }

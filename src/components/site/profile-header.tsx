@@ -12,6 +12,7 @@ import { useSound } from "../../hooks/soundcn/use-sound";
 import { click005Sound } from "../../lib/click-005";
 import { click004Sound } from "../../lib/click-004";
 import { VerifiedSolidIcon } from "../icons";
+import { cn } from "../../lib/utils";
 
 const COUNTER_STORAGE_KEY = "counter"
 
@@ -57,16 +58,27 @@ export default function ProfileHeader() {
   return (
     <section id="profile-header" className="screen-line-bottom grid grid-cols-[auto_1fr] grid-rows-[1fr_auto] overflow-y-clip border-x border-line">
       <div className=" w-full h-87 max-sm:h-52 col-span-2 p-2 sm:col-span-1 sm:col-start-2 sm:p-4">
-        <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-30 top-15 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
-          <div className="max-sm:hidden">
-              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10"></div>
-              <div className="absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10"></div>
-              <div className="absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10"></div>
+        <figure className="absolute w-xl max-sm:w-full max-sm:max-w-80 h-80 max-sm:h-48 top-1.5 left-[54%] max-sm:left-1/2 -translate-x-1/2 col-span-2 p-2 z-20 flex items-center justify-center">
+
+          <div>
+            <div className={cn(
+              "absolute rotate-30 border-t border-secondary w-250 top-40 right-44 -z-10",
+              "max-sm:w-230 max-sm:-left-129 max-sm:top-22"
+            )}/>
+            <div className={cn(
+              "absolute rotate-30 border-t border-secondary w-250 top-40 -right-50.5 -z-10",
+              "max-sm:w-230 max-sm:-left-74 max-sm:top-22"
+            )}/>
+            <div className={cn(
+              "absolute -rotate-30 border-t border-secondary w-250 top-40 left-0 -z-10", 
+              "max-sm:w-230 max-sm:-left-37 max-sm:top-22"
+            )}/>
           </div>
+
           <div className="w-full h-full max-sm:max-h-25 z-20">
-            <SpotlightLogo onClick={handleCounterInc} className="w-180 absolute -top-16 -left-16 max-sm:w-90 max-sm:h-90 max-sm:-top-25 max-sm:-left-8"/>
+            <SpotlightLogo onClick={handleCounterInc} className="w-145 absolute top-0 -left-9 max-sm:w-84 max-sm:-left-2"/>
           </div>
-          <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-500 tabular-nums select-none max-sm:hidden">Fig. 1</figcaption>
+          <figcaption className="pointer-events-none absolute right-1 bottom-0 text-sm leading-none tracking-wide text-zinc-600 tabular-nums select-none">Fig. 1</figcaption>
         </figure>
       </div>
 
@@ -75,7 +87,7 @@ export default function ProfileHeader() {
           <Separator className="absolute left-0 w-screen -z-10"/>
           <div className="group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none">
             <Image
-              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1"
+              className="ring-border ring-offset-background rounded-full w-33 h-33 max-sm:w-28 max-sm:h-28 p-1 z-100"
               loading="eager"
               src={Me}
               alt="Photo of Bruno Silva"
@@ -86,8 +98,8 @@ export default function ProfileHeader() {
 
       <div className="flex flex-col relative z-20">
         <div className="z-1 mt-auto border-t border-line">
-          <div className="flex items-center gap-2 pl-4">
-            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold z-100">
+          <div className="flex items-center gap-2 pl-4 max-sm:pl-2">
+            <h1 className="-translate-y-px text-[2rem]/none tracking-tight font-extrabold max-sm:text-[1.7rem] z-100">
               {USER.firstName} {USER.lastName}
             </h1>
 
@@ -97,12 +109,12 @@ export default function ProfileHeader() {
             }
           </div>
 
-          <div className="h-12.5 border-t border-line py-1 pl-4 sm:h-9">
+          <div className="flex items-center h-13 border-t border-line py-1 pl-4 max-sm:pl-2 sm:h-9">
             <TextFlip className="text-sidebar-ring">
               {(t.raw('lines') as string[]).map((line, i) => (
                 <span key={i}>{line}</span>
               ))}
-              <span className="flex gap-2"> 
+              <span className="flex gap-2 text-wrap"> 
                 { showCounter 
                   ? <><MousePointerClick className="w-4"/> {t("eastereggLines.active", {count: counter})} </>
                   : t('eastereggLines.deactive')

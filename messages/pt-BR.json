@@ -135,17 +135,38 @@
       "degree": "Ensino Médio",
       "field": "",
       "bullets": [
-        "Membro da maior equipe de drones do estado da Bahia.",
-        "Duas vezes vencedor de uma competição de programação local.",
-        "Terceiro lugar na competição de drones de Santa Catarina.",
-        "Aprendi sobre desenvolvimento web.",
-        "Dois artigos escritos.",
+        {
+          "text": "Membro da maior equipe de drones do estado da Bahia.",
+          "items": []
+        },
+        {
+          "text": "Duas vezes vencedor de uma competição de programação local.",
+          "items": []
+        },
+        {
+          "text": "Terceiro lugar na competição de drones de Santa Catarina.",
+          "items": []
+        },
+        {
+          "text": "Aprendi sobre desenvolvimento web.",
+          "items": []
+        },
+        {
+          "text": "Dois artigos escritos.",
+          "items": []
+        },
         {
           "text": "Projetos acadêmicos com:",
           "items": ["Django", "PHP"]
         },
-        "Aprendi o básico de engenharia de requisitos.",
-        "Aprendi o básico de banco de dados."
+        {
+          "text": "Aprendi o básico de engenharia de requisitos.",
+          "items": []
+        },
+        {
+          "text": "Aprendi o básico de banco de dados.",
+          "items": []
+        }
       ]
     }
   },
