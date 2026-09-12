@@ -74,6 +74,7 @@ export default function ProjectCollapsible({project, defaultOpen = false}: {proj
               <HoverCard>
                 <HoverCardTrigger delay={.1} href={project.url} target="_blank">
                   <LinkIcon className="w-5.5 h-5.5 p-1"/>
+                  <span className="sr-only">{t('goToProject')}</span>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-fit">
                   <span>{t('goToProject')}</span>

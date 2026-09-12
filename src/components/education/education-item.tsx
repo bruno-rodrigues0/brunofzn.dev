@@ -21,7 +21,7 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
   const [playClose] = useSound(bookCloseSound)
 
   const {start, end} = item.period
-  const bullets = t.raw(`${item.key}.bullets`) as (string | {text:string, items: string[]})[]
+  const bullets = t.raw(`${item.key}.bullets`) as ({text:string, items: string[]})[]
 
   const handleOpenChange = () => {
     setOpen(prev => !prev)
@@ -115,24 +115,18 @@ export function EducationItem({ item, defaultOpen }: { item: Education, defaultO
         <CollapsibleContent className="overflow-hidden h-(--collapsible-panel-height) data-[starting-style]:h-0 data-[ending-style]:h-0 transition-[height] duration-300 ease-in-out">
           <div className="pt-3 pb-1 pl-9 text-sm">
             <ul className="list-disc marker:text-ring list-inside">
-              {bullets.map((bullet, i) => {
-                if (typeof bullet == 'string'){
-                  return (
-                  <li key={i}>{bullet}</li>
-                  )
-                } else {
-                  return (
-                    <div key={i}>
-                      <li>{bullet.text}</li>
+              {bullets.map((bullet, i) => (
+                  <li key={i}>
+                    <span >{bullet.text}</span>
+                    {bullet.items.length > 0 && (
                       <ul className="list-disc list-inside marker:text-secondary pl-6">
                         {bullet.items.map((bulletItem, i) => (
                           <li key={i}>{bulletItem}</li>
                         ))}
                       </ul>
-                    </div>
-                  )
-                }
-              })}
+                    )}
+                  </li>
+              ))}
             </ul>
           </div>
         </CollapsibleContent>
