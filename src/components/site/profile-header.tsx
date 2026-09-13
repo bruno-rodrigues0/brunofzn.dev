@@ -83,7 +83,7 @@ export default function ProfileHeader() {
 
       <div className="flex flex-col sm:row-span-2 sm:row-start-1">
         <div className="screen-line-top mt-auto shrink-0 border-r border-line">
-            <AvatarLightsToggle className="relative group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none z-50">
+            <AvatarLightsToggle className="relative group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none z-30">
               <AvatarLights
                 className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2 z-20"
                 variants={showCounter ? USER.avatarGhibliVariants : USER.avatarVariants}
