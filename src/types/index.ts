@@ -52,7 +52,14 @@ export type User = {
   whatsapp: string,
   jobTitle: string
   avatar: string
+  avatarGhibli: string,
   avatarVariants: {
+    lightOff: string,
+    lightOn: string
+    darkOff: string,
+    darkOn: string
+  }
+  avatarGhibliVariants: {
     lightOff: string,
     lightOn: string
     darkOff: string,
@@ -60,5 +67,4 @@ export type User = {
   }
   timeZone: Timezone
   keywords: string[]
-
 }

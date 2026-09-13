@@ -22,11 +22,18 @@ export const USER: User = {
 
   jobTitle: "Web Developer",
   avatar: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
+  avatarGhibli: "https://assets.brunofzn.dev/images/avatar_ghibli_dark.png",
   avatarVariants: {
     lightOff: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
     lightOn: "https://assets.brunofzn.dev/images/avatar_original_light.png",
     darkOff: "https://assets.brunofzn.dev/images/avatar_original_dark.png",
     darkOn: "https://assets.brunofzn.dev/images/avatar_original_light.png",
+  },
+  avatarGhibliVariants: {
+    lightOff: "https://assets.brunofzn.dev/images/avatar_ghibli_dark.png",
+    lightOn: "https://assets.brunofzn.dev/images/avatar_ghibli_light.png",
+    darkOff: "https://assets.brunofzn.dev/images/avatar_ghibli_dark.png",
+    darkOn: "https://assets.brunofzn.dev/images/avatar_ghibli_light.png",
   },
   timeZone: "America/Sao_Paulo",
   keywords: [
