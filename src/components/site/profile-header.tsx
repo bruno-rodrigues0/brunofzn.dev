@@ -1,7 +1,6 @@
 "use client"
 import { Verified, MousePointerClick} from "lucide-react";
 import { TextFlip } from "../text-flip";
-import { Separator } from "../ui/separator";
 import { SpotlightLogo } from "../spotlight-logo";
 import { USER } from "@/constants/user";
 import { useTranslations } from "next-intl";
@@ -87,7 +86,7 @@ export default function ProfileHeader() {
             <AvatarLightsToggle className="relative group/avatar-lights-toggle mx-0.5 my-0.75 flex outline-none z-50">
               <AvatarLights
                 className="ring-border ring-offset-background group-focus-visible/avatar-lights-toggle:ring-1 group-focus-visible/avatar-lights-toggle:ring-offset-2 z-20"
-                variants={USER.avatarVariants}
+                variants={showCounter ? USER.avatarGhibliVariants : USER.avatarVariants}
               />
             </AvatarLightsToggle>
         </div>
