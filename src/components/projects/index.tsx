@@ -55,7 +55,7 @@ const handleShowMore = () => { setShowMore(prev => { const newValue = !prev
         </motion.ul>}
       </AnimatePresence>
 
-      {PROJECTS.length > 2 ?
+      {PROJECTS.length > 3 ?
         <div className="flex justify-center pt-4">
           <Button onClick={handleShowMore} variant="secondary" className="rounded-sm border-2 border-primary-foreground transition-all">
             {showMore ? tc('showLess') : tc('showMore')} {showMore ? <ChevronUp /> : <ChevronDown />}

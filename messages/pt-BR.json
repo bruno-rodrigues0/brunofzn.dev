@@ -91,23 +91,6 @@
       "bullets": [
         "Portfólio feito à mão e meu projeto favorito."
       ]
-    },
-    "apple_website": {
-      "intro": "Página de apresentação do iPhone 15 Pro construída com Next.js e gsap.",
-      "bullets": [
-        "Animações com gsap.",
-        "Animações 3D com three.js.",
-        "Interfaces modernas com Tailwind CSS."
-      ]
-    },
-    "concord": {
-      "intro": "Um clone do Discord com chats, servidores e canais funcionando.",
-      "bullets": [
-        "Trabalho com websocket e padrão pub/sub para mensagens.",
-        "Uso de Swagger para documentação automática e testes de endpoints.",
-        "Implementação de verificação de tipos com zod.",
-        "Uma API REST completa construída com Fastify."
-      ]
     }
   },
   "education": {
