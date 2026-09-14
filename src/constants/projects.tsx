@@ -39,28 +39,27 @@ export const PROJECTS: Project[] = [
       end: "06.2026",
     },
   },
-
-  {
-    key: "apple_website",
-    title: "Apple Website",
-    url: "/",
-    labels: ["Next.js", "Typescript", "gsap", "shadcn/ui", "next-video"],
-    logo: <CodeXml className="w-5"/>,
-    period: {
-      start: "08.2026",
-      end: null,
-    },
-  },
-
-  {
-    key: "concord",
-    title: "Concord",
-    url: "/",
-    labels: ["Next.js", "Typescript", "shadcn/ui", "Fastify", "Swagger", "zod",  "better-auth", "Postgresql", "Prisma", "nginx", "Docker", "Websocket"],
-    logo: <CodeXml className="w-5"/>,
-    period: {
-      start: "01.2026",
-      end: null,
-    },
-  },
+  // {
+  //   key: "apple_website",
+  //   title: "Apple Website",
+  //   url: "/",
+  //   labels: ["Next.js", "Typescript", "gsap", "shadcn/ui", "next-video"],
+  //   logo: <CodeXml className="w-5"/>,
+  //   period: {
+  //     start: "08.2026",
+  //     end: null,
+  //   },
+  // },
+  //
+  // {
+  //   key: "concord",
+  //   title: "Concord",
+  //   url: "/",
+  //   labels: ["Next.js", "Typescript", "shadcn/ui", "Fastify", "Swagger", "zod",  "better-auth", "Postgresql", "Prisma", "nginx", "Docker", "Websocket"],
+  //   logo: <CodeXml className="w-5"/>,
+  //   period: {
+  //     start: "01.2026",
+  //     end: null,
+  //   },
+  // },
 ]

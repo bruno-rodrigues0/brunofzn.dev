@@ -151,7 +151,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
           <SpeedInsights />
           <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
           >
