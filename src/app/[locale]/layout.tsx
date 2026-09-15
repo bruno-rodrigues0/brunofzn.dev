@@ -2,7 +2,6 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Caveat} from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AUTHOR, OPENGRAPH_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site-config";
 import { USER } from "@/constants/user";
@@ -10,6 +9,7 @@ import { URL } from "url";
 import { routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
+import { AnalyticsProvider } from "../../components/analytics-provider";
 
 const handwrite = Caveat({
   weight: "400",
@@ -147,14 +147,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <Analytics
-          beforeSend={(event) => {
-            if (localStorage.getItem("skip-analytics") === "true") {
-              return null
-            }
-            return event
-          }}
-        />
+        <AnalyticsProvider/>
         <SpeedInsights />
         <ThemeProvider
         attribute="class"
