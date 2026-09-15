@@ -140,26 +140,33 @@ export default async function RootLayout({ children }: LayoutProps<"/[locale]">)
       suppressHydrationWarning
       data-scroll-behavior="smooth"
     >
-        <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-            }}
-          />
-          <Analytics />
-          <SpeedInsights />
-          <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-          >
-            <NextIntlClientProvider>
-              {children}
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </body>
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+        <Analytics
+          beforeSend={(event) => {
+            if (localStorage.getItem("skip-analytics") === "true") {
+              return null
+            }
+            return event
+          }}
+        />
+        <SpeedInsights />
+        <ThemeProvider
+        attribute="class"
+        defaultTheme="dark"
+        enableSystem
+        disableTransitionOnChange
+        >
+          <NextIntlClientProvider>
+            {children}
+          </NextIntlClientProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
