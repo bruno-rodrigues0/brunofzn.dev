@@ -16,6 +16,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.6.20",
     "date-fns": "^4.4.0",
     "jotai": "^3.0.0",
     "lucide-react": "^1.34.0",
